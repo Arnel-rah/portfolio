@@ -1,0 +1,16 @@
+---
+interface Props {
+  name: string;
+  sourceUrl?: string;
+}
+const { name, sourceUrl = "#" } = Astro.props;
+---
+<footer>
+  <span>© 2026 {name}</span>
+  <span><a href={sourceUrl}>Source code</a></span>
+</footer>
+
+<style>
+footer{margin-top:4.5rem;padding-top:1.2rem;color:var(--muted);font-size:.92rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem 1.5rem}
+footer a{margin-right:1rem}
+</style>

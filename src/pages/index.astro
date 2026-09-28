@@ -1,17 +1,64 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import ProjectEntry from "../components/ProjectEntry.astro";
+import InfoRow from "../components/InfoRow.astro";
+import Footer from "../components/Footer.astro";
 
+const projects = [
+  {
+    title: "Secure Deploy Kit",
+    description: "Infrastructure as code with security scanning built into the pipeline. Deploys in one command.",
+    tech: "Terraform, GitHub Actions, Trivy",
+    repo: "https://github.com/Arnel-rah",
+  },
+  {
+    title: "GhostPort",
+    description: "A port monitoring tool that streams results over gRPC.",
+    tech: "Go, gRPC, Docker",
+    repo: "https://github.com/Arnel-rah",
+  },
+  {
+    title: "Cinema reservation API",
+    description: "A REST API for booking cinema seats.",
+    tech: "Java, Spring Boot",
+    repo: "https://github.com/Arnel-rah",
+  },
+  {
+    title: "Air quality ETL",
+    description: "A pipeline that collects and cleans air quality data.",
+    tech: "Python",
+    repo: "https://github.com/Arnel-rah",
+  },
+];
 ---
+<Layout title="RAHARINANDRASANA Willys Sadi Arnel | DevOps & Cloud Engineer">
+  <Nav />
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <Hero
+    name="RAHARINANDRASANA Willys Sadi Arnel"
+    role="DevOps & Cloud Engineer"
+    intro="I design and automate infrastructure, CI/CD pipelines and secure deployments, with backend services in Go and Java. Based in Madagascar, working remotely in English and French."
+  />
+
+  <h2 id="projects">Projects</h2>
+  {projects.map((p) => <ProjectEntry {...p} />)}
+
+  <h2 id="skills">Skills</h2>
+  <dl>
+    <InfoRow label="Infrastructure">Terraform, Docker, Linux</InfoRow>
+    <InfoRow label="CI/CD & security">GitHub Actions, Trivy</InfoRow>
+    <InfoRow label="Languages">Go, Java, Python</InfoRow>
+    <InfoRow label="Cloud">DigitalOcean, Azure</InfoRow>
+  </dl>
+
+  <h2 id="contact">Contact</h2>
+  <dl>
+    <InfoRow label="Email"><a href="mailto:you@example.com">you@example.com</a></InfoRow>
+    <InfoRow label="GitHub"><a href="https://github.com/Arnel-rah">github.com/Arnel-rah</a></InfoRow>
+    <InfoRow label="LinkedIn"><a href="#">linkedin.com/in/your-profile</a></InfoRow>
+  </dl>
+
+  <Footer name="RAHARINANDRASANA Willys Sadi Arnel" sourceUrl="#" />
+</Layout>
