@@ -1,0 +1,19 @@
+---
+---
+<nav>
+  <a class="brand" href="#">arnel.</a>
+  <div class="menu">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<style>
+nav{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+nav .brand{font-weight:700;font-size:1.15rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+nav .menu{display:flex;gap:1.3rem;font-size:.95rem}
+nav .menu a{color:var(--muted);text-decoration:none;font-weight:500}
+nav .menu a:hover{color:var(--accent)}
+@media (max-width:36rem){nav .menu{gap:.9rem}}
+</style>

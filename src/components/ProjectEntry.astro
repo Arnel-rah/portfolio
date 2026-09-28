@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tech: string;
+  repo: string;
+}
+const { title, description, tech, repo } = Astro.props;
+---
+<div class="entry">
+  <h3><a href={repo}>{title}</a></h3>
+  <span class="tech">{tech}</span>
+  <p>{description}</p>
+</div>
+
+<style>
+.entry{display:grid;grid-template-columns:1fr auto;gap:.2rem 1.5rem;padding:1.2rem 0;border-bottom:1px solid var(--line)}
+.entry h3{font-size:1.02rem;font-weight:600;margin:0}
+.entry h3 a{color:var(--ink);text-decoration:none}
+.entry h3 a:hover{color:var(--accent)}
+.entry p{color:var(--muted);margin:0;grid-column:1}
+.entry .tech{grid-column:2;grid-row:1;font-size:.85rem;color:var(--accent);font-weight:500;text-align:right}
+@media (max-width:36rem){
+  .entry{grid-template-columns:1fr}
+  .entry .tech{grid-column:1;grid-row:auto;text-align:left;margin-top:.3rem}
+}
+</style>
