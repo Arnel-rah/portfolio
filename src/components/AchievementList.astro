@@ -10,12 +10,13 @@ const { items } = Astro.props;
 ---
 
 <section id="about" class="mb-12 font-mono">
-  <!-- Titre de section style console / terminal -->
-  <h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold pb-2 border-b border-stone-800/80">
-    Things I've done
-  </h2>
+  <div class="flex items-center gap-2 pb-2 border-b border-stone-800/80">
+    <span class="text-stone-600 select-none text-sm sm:text-base font-medium">//</span>
+    <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-200">
+      Things I've done
+    </h2>
+  </div>
 
-  <!-- Liste d'éléments en typographie monospace -->
   <ul class="mt-4 space-y-2.5 text-sm text-stone-400">
     {items.map((item) => (
       <li class="flex items-start gap-2.5">
