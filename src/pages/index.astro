@@ -49,6 +49,7 @@ const achievements = [
   { text: "Based in Madagascar, building in public on GitHub.", href: "https://github.com/Arnel-rah" },
 ];
 ---
+
 <Layout title="RAHARINANDRASANA Willys Sadi Arnel — Backend & Cloud Automation Engineer">
   <Nav />
 
@@ -63,31 +64,33 @@ const achievements = [
 
   <NowSection />
 
-  <section id="projects" class="mb-12">
-    <div class="flex items-center justify-between pb-2 border-b border-stone-200 dark:border-stone-800">
-      <h2 class="text-base font-bold text-stone-900 dark:text-stone-100">
+  <!-- Section Projets -->
+  <section id="projects" class="mb-12 font-mono">
+    <div class="flex items-center justify-between pb-2 border-b border-stone-800/80">
+      <h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold">
         Featured Projects
       </h2>
       <a
         href="https://github.com/Arnel-rah"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-xs font-mono text-stone-500 dark:text-stone-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+        class="text-xs font-mono text-stone-500 hover:text-stone-300 transition-colors"
       >
         View all on GitHub ↗
       </a>
     </div>
 
-    <div>
+    <div class="mt-4">
       {projects.map((p) => <ProjectItem {...p} />)}
     </div>
   </section>
 
-  <section id="stack" class="mb-12">
-    <h2 class="text-base font-bold text-stone-900 dark:text-stone-100 pb-2 border-b border-stone-200 dark:border-stone-800">
+  <!-- Section Stack Technique -->
+  <section id="stack" class="mb-12 font-mono">
+    <h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold pb-2 border-b border-stone-800/80">
       Technical Stack
     </h2>
-    <dl class="mt-1">
+    <dl class="mt-2">
       <InfoRow label="Infrastructure">
         Terraform, Docker, Linux
       </InfoRow>
@@ -103,23 +106,37 @@ const achievements = [
     </dl>
   </section>
 
-  <section id="contact" class="mb-12">
-    <h2 class="text-base font-bold text-stone-900 dark:text-stone-100 pb-2 border-b border-stone-200 dark:border-stone-800">
+  <!-- Section Contact -->
+  <section id="contact" class="mb-12 font-mono">
+    <h2 class="text-xs uppercase tracking-widest text-stone-500 font-semibold pb-2 border-b border-stone-800/80">
       Contact
     </h2>
-    <dl class="mt-1">
+    <dl class="mt-2">
       <InfoRow label="Email">
-        <a href="mailto:you@example.com" class="text-stone-900 dark:text-stone-100 hover:text-teal-600 dark:hover:text-teal-400 underline underline-offset-4 decoration-stone-300 dark:decoration-stone-700 transition-colors">
+        <a
+          href="mailto:you@example.com"
+          class="text-stone-300 hover:text-white underline underline-offset-4 decoration-stone-700 hover:decoration-stone-400 transition-colors"
+        >
           you@example.com
         </a>
       </InfoRow>
       <InfoRow label="GitHub">
-        <a href="https://github.com/Arnel-rah" target="_blank" rel="noopener noreferrer" class="text-stone-900 dark:text-stone-100 hover:text-teal-600 dark:hover:text-teal-400 underline underline-offset-4 decoration-stone-300 dark:decoration-stone-700 transition-colors">
+        <a
+          href="https://github.com/Arnel-rah"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-stone-300 hover:text-white underline underline-offset-4 decoration-stone-700 hover:decoration-stone-400 transition-colors"
+        >
           github.com/Arnel-rah
         </a>
       </InfoRow>
       <InfoRow label="LinkedIn">
-        <a href="#" target="_blank" rel="noopener noreferrer" class="text-stone-900 dark:text-stone-100 hover:text-teal-600 dark:hover:text-teal-400 underline underline-offset-4 decoration-stone-300 dark:decoration-stone-700 transition-colors">
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-stone-300 hover:text-white underline underline-offset-4 decoration-stone-700 hover:decoration-stone-400 transition-colors"
+        >
           linkedin.com/in/your-profile
         </a>
       </InfoRow>
