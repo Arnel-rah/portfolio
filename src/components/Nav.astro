@@ -1,20 +1,27 @@
 ---
 import { Sun, Moon } from "@lucide/astro";
 ---
-<header class="mb-12">
-  <nav class="flex items-center justify-between pb-4 border-b border-stone-200 dark:border-stone-800/80">
-    <a href="/" class="font-bold text-base tracking-tight text-stone-900 dark:text-stone-100 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-mono">
-      arnel<span class="text-teal-600 dark:text-teal-400">.dev</span>
+
+<header class="mb-12 font-mono">
+  <nav class="flex items-center justify-between pb-3 border-b border-stone-800/80">
+    <!-- Logo minimaliste -->
+    <a
+      href="/"
+      class="text-xs sm:text-sm tracking-widest uppercase transition-colors group"
+    >
+      <span class="font-bold text-stone-200 group-hover:text-white">arnel</span>
+      <span class="text-stone-500 group-hover:text-stone-400">.dev</span>
     </a>
 
+    <!-- Bouton Theme Toggle -->
     <button
       id="theme-toggle"
       type="button"
-      aria-label="Toggle dark mode"
-      class="inline-flex items-center justify-center w-8 h-8 rounded-md text-stone-600 dark:text-stone-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-stone-100 dark:hover:bg-stone-800/60 transition-colors"
+      aria-label="Toggle theme"
+      class="p-1.5 rounded-md bg-stone-900/90 border border-stone-800 text-stone-400 hover:text-stone-200 hover:border-stone-700 transition-all"
     >
-      <Sun size={18} stroke-width={1.8} class="block dark:hidden" />
-      <Moon size={18} stroke-width={1.8} class="hidden dark:block" />
+      <Sun size={15} class="block dark:hidden" />
+      <Moon size={15} class="hidden dark:block" />
     </button>
   </nav>
 </header>
