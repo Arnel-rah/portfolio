@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
+import AchievementList from "../components/AchievementList.astro";
 import NowSection from "../components/NowSection.astro";
 import ProjectItem from "../components/ProjectItem.astro";
 import InfoRow from "../components/InfoRow.astro";
@@ -40,6 +41,13 @@ const projects = [
     repo: "https://github.com/Arnel-rah",
   },
 ];
+
+const achievements = [
+  { text: "Automate deployments end-to-end, from commit to production, using Terraform and GitHub Actions." },
+  { text: "Work across Go, Java (Spring Boot) and Python for backend services and infrastructure tooling." },
+  { text: "Build and ship personal projects, from IaC toolkits to gRPC services and terminal apps." },
+  { text: "Based in Madagascar, building in public on GitHub.", href: "https://github.com/Arnel-rah" },
+];
 ---
 <Layout title="RAHARINANDRASANA Willys Sadi Arnel — Backend & Cloud Automation Engineer">
   <Nav />
@@ -50,6 +58,8 @@ const projects = [
     role="Backend & Cloud Automation Engineer"
     intro="I design automated infrastructure, secure CI/CD pipelines, and high-performance backend systems — specializing in Go, Java, and Python. Based in Madagascar, working remotely."
   />
+
+  <AchievementList items={achievements} />
 
   <NowSection />
 
