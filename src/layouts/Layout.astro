@@ -1,42 +1,31 @@
 ---
 interface Props {
   title: string;
+  description?: string;
 }
-const { title } = Astro.props;
+const { 
+  title, 
+  description = "Willys Sadi Arnel — Junior Backend & Cloud Automation Engineer based in Madagascar." 
+} = Astro.props;
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content={description} />
   <title>{title}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body>
-  <main>
+<body class="bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 font-sans antialiased selection:bg-teal-500/20 selection:text-teal-700 dark:selection:text-teal-300 min-h-screen">
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 py-10 sm:py-16">
     <slot />
-  </main>
+  </div>
 </body>
 </html>
 
 <style is:global>
-:root{
-  --bg:#fafbfb; --ink:#14201f; --muted:#5b6b69; --accent:#0f766e; --line:#dfe6e5;
-  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-}
-@media (prefers-color-scheme:dark){
-  :root{--bg:#0e1514; --ink:#e4eeec; --muted:#8fa4a1; --accent:#4fd1c0; --line:#22302e;}
-}
-html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1.02rem;line-height:1.7}
-main{max-width:42rem;margin:0 auto;padding:2rem 1.5rem 3rem}
-a{color:var(--accent);text-underline-offset:.2em}
-a:hover{text-decoration-thickness:2px}
-a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:3px}
-p{margin:.5rem 0}
-h2{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;margin:4rem 0 0;padding-bottom:.6rem;border-bottom:1px solid var(--line)}
-dl{margin:0}
+  @import "tailwindcss";
 </style>

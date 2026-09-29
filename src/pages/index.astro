@@ -2,63 +2,122 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
-import ProjectEntry from "../components/ProjectEntry.astro";
+import NowSection from "../components/NowSection.astro";
+import ProjectItem from "../components/ProjectItem.astro";
 import InfoRow from "../components/InfoRow.astro";
 import Footer from "../components/Footer.astro";
 
 const projects = [
   {
     title: "Secure Deploy Kit",
-    description: "Infrastructure as code with security scanning built into the pipeline. Deploys in one command.",
-    tech: "Terraform, GitHub Actions, Trivy",
+    description: "Infrastructure as Code automation template featuring pipeline vulnerability scanning and single-command remote deployment.",
+    tech: ["Terraform", "GitHub Actions", "Trivy"],
     repo: "https://github.com/Arnel-rah",
+    badge: "Open Source",
   },
   {
     title: "GhostPort",
-    description: "A port monitoring tool that streams results over gRPC.",
-    tech: "Go, gRPC, Docker",
+    description: "Remote port and system process monitoring tool streaming real-time status data over gRPC with a Terminal UI.",
+    tech: ["Go", "gRPC", "Bubble Tea", "Docker"],
     repo: "https://github.com/Arnel-rah",
   },
   {
-    title: "Cinema reservation API",
-    description: "A REST API for booking cinema seats.",
-    tech: "Java, Spring Boot",
+    title: "BugSight",
+    description: "Lightweight error monitoring crate published on crates.io for structured application logging and runtime diagnostics.",
+    tech: ["Rust", "crates.io"],
+    repo: "https://github.com/Arnel-rah",
+    badge: "Crate",
+  },
+  {
+    title: "Cinema Reservation API",
+    description: "RESTful backend service handling seat booking workflows, transactional concurrency, and schedule management.",
+    tech: ["Java", "Spring Boot", "PostgreSQL"],
     repo: "https://github.com/Arnel-rah",
   },
   {
-    title: "Air quality ETL",
-    description: "A pipeline that collects and cleans air quality data.",
-    tech: "Python",
+    title: "Air Quality ETL Pipeline",
+    description: "Automated data pipeline harvesting environmental metrics, cleaning dataset distributions, and outputting analytical reports.",
+    tech: ["Python", "Open-Meteo API", "Power BI"],
     repo: "https://github.com/Arnel-rah",
   },
 ];
 ---
-<Layout title="RAHARINANDRASANA Willys Sadi Arnel | DevOps & Cloud Engineer">
+<Layout title="RAHARINANDRASANA Willys Sadi Arnel — Backend & Cloud Automation Engineer">
   <Nav />
 
   <Hero
     name="RAHARINANDRASANA Willys Sadi Arnel"
-    role="DevOps & Cloud Engineer"
-    intro="I design and automate infrastructure, CI/CD pipelines and secure deployments, with backend services in Go and Java. Based in Madagascar, working remotely in English and French."
+    role="Junior Backend & Cloud Automation Engineer"
+    intro="I design automated infrastructure, secure CI/CD pipelines, and high-performance backend systems. Specialized in Go, Java, and Rust. Based in Madagascar, open to remote work worldwide."
   />
 
-  <h2 id="projects">Projects</h2>
-  {projects.map((p) => <ProjectEntry {...p} />)}
+  <NowSection />
 
-  <h2 id="skills">Skills</h2>
-  <dl>
-    <InfoRow label="Infrastructure">Terraform, Docker, Linux</InfoRow>
-    <InfoRow label="CI/CD & security">GitHub Actions, Trivy</InfoRow>
-    <InfoRow label="Languages">Go, Java, Python</InfoRow>
-    <InfoRow label="Cloud">DigitalOcean, Azure</InfoRow>
-  </dl>
+  <section id="projects" class="mb-12">
+    <div class="flex items-center justify-between pb-2 border-b border-stone-200 dark:border-stone-800">
+      <h2 class="text-base font-bold text-stone-900 dark:text-stone-100">
+        Featured Projects
+      </h2>
+      <a 
+        href="https://github.com/Arnel-rah" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="text-xs font-mono text-stone-500 dark:text-stone-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+      >
+        View all on GitHub ↗
+      </a>
+    </div>
 
-  <h2 id="contact">Contact</h2>
-  <dl>
-    <InfoRow label="Email"><a href="mailto:you@example.com">you@example.com</a></InfoRow>
-    <InfoRow label="GitHub"><a href="https://github.com/Arnel-rah">github.com/Arnel-rah</a></InfoRow>
-    <InfoRow label="LinkedIn"><a href="#">linkedin.com/in/your-profile</a></InfoRow>
-  </dl>
+    <div>
+      {projects.map((p) => <ProjectItem {...p} />)}
+    </div>
+  </section>
 
-  <Footer name="RAHARINANDRASANA Willys Sadi Arnel" sourceUrl="#" />
+  <section id="stack" class="mb-12">
+    <h2 class="text-base font-bold text-stone-900 dark:text-stone-100 pb-2 border-b border-stone-200 dark:border-stone-800">
+      Technical Stack
+    </h2>
+    <dl class="mt-1">
+      <InfoRow label="Infrastructure">
+        Terraform, Docker, Docker Compose, Kubernetes, LocalStack, Linux (Debian, Solus)
+      </InfoRow>
+      <InfoRow label="CI/CD & Security">
+        GitHub Actions, Trivy, Git workflows
+      </InfoRow>
+      <InfoRow label="Languages">
+        Go, Java (Spring Boot), Rust, Python, TypeScript / Node.js
+      </InfoRow>
+      <InfoRow label="Databases">
+        PostgreSQL, Supabase, Redis, MongoDB, Prisma, JDBC
+      </InfoRow>
+      <InfoRow label="Cloud Platforms">
+        DigitalOcean, Azure, AWS (LocalStack), Vercel
+      </InfoRow>
+    </dl>
+  </section>
+
+  <section id="contact" class="mb-12">
+    <h2 class="text-base font-bold text-stone-900 dark:text-stone-100 pb-2 border-b border-stone-200 dark:border-stone-800">
+      Contact & Links
+    </h2>
+    <dl class="mt-1">
+      <InfoRow label="Email">
+        <a href="mailto:you@example.com" class="text-stone-900 dark:text-stone-100 hover:text-teal-600 dark:hover:text-teal-400 underline underline-offset-4 decoration-stone-300 dark:decoration-stone-700 transition-colors">
+          you@example.com
+        </a>
+      </InfoRow>
+      <InfoRow label="GitHub">
+        <a href="https://github.com/Arnel-rah" target="_blank" rel="noopener noreferrer" class="text-stone-900 dark:text-stone-100 hover:text-teal-600 dark:hover:text-teal-400 underline underline-offset-4 decoration-stone-300 dark:decoration-stone-700 transition-colors">
+          github.com/Arnel-rah
+        </a>
+      </InfoRow>
+      <InfoRow label="LinkedIn">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="text-stone-900 dark:text-stone-100 hover:text-teal-600 dark:hover:text-teal-400 underline underline-offset-4 decoration-stone-300 dark:decoration-stone-700 transition-colors">
+          linkedin.com/in/your-profile
+        </a>
+      </InfoRow>
+    </dl>
+  </section>
+
+  <Footer name="RAHARINANDRASANA Willys Sadi Arnel" sourceUrl="https://github.com/Arnel-rah" />
 </Layout>
