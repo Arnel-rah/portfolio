@@ -4,14 +4,11 @@ interface Props {
 }
 const { label } = Astro.props;
 ---
-<div class="row">
-  <dt>{label}</dt>
-  <dd><slot /></dd>
+<div class="grid grid-cols-1 sm:grid-cols-[10.5rem_1fr] gap-1 sm:gap-4 py-3 border-b border-stone-200 dark:border-stone-800/80 text-sm">
+  <dt class="font-medium text-stone-900 dark:text-stone-100 font-mono text-xs uppercase tracking-wider self-center">
+    {label}
+  </dt>
+  <dd class="text-stone-600 dark:text-stone-400 m-0">
+    <slot />
+  </dd>
 </div>
-
-<style>
-.row{display:grid;grid-template-columns:10rem 1fr;gap:.3rem 1.5rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
-.row dt{font-weight:600}
-.row dd{margin:0;color:var(--muted)}
-@media (max-width:36rem){.row{grid-template-columns:1fr}}
-</style>

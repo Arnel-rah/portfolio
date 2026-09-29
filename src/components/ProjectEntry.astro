@@ -7,21 +7,26 @@ interface Props {
 }
 const { title, description, tech, repo } = Astro.props;
 ---
-<div class="entry">
-  <h3><a href={repo}>{title}</a></h3>
-  <span class="tech">{tech}</span>
-  <p>{description}</p>
-</div>
-
-<style>
-.entry{display:grid;grid-template-columns:1fr auto;gap:.2rem 1.5rem;padding:1.2rem 0;border-bottom:1px solid var(--line)}
-.entry h3{font-size:1.02rem;font-weight:600;margin:0}
-.entry h3 a{color:var(--ink);text-decoration:none}
-.entry h3 a:hover{color:var(--accent)}
-.entry p{color:var(--muted);margin:0;grid-column:1}
-.entry .tech{grid-column:2;grid-row:1;font-size:.85rem;color:var(--accent);font-weight:500;text-align:right}
-@media (max-width:36rem){
-  .entry{grid-template-columns:1fr}
-  .entry .tech{grid-column:1;grid-row:auto;text-align:left;margin-top:.3rem}
-}
-</style>
+<article class="group py-4 border-b border-stone-200 dark:border-stone-800/80">
+  <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4">
+    <h3 class="text-base font-semibold text-stone-900 dark:text-stone-100">
+      <a 
+        href={repo} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="inline-flex items-center gap-1.5 hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
+      >
+        <span>{title}</span>
+        <span class="text-xs text-stone-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-transform">
+          ↗
+        </span>
+      </a>
+    </h3>
+    <span class="font-mono text-xs text-stone-500 dark:text-stone-400 shrink-0">
+      {tech}
+    </span>
+  </div>
+  <p class="text-sm text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed text-pretty">
+    {description}
+  </p>
+</article>

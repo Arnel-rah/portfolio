@@ -1,19 +1,16 @@
 ---
 ---
-<nav>
-  <a class="brand" href="#">arnel.</a>
-  <div class="menu">
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+<header class="mb-12">
+  <nav class="flex items-center justify-between pb-4 border-b border-stone-200 dark:border-stone-800/80">
+    <a href="#" class="font-bold text-base tracking-tight text-stone-900 dark:text-stone-100 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-mono">
+      arnel<span class="text-teal-600 dark:text-teal-400">.dev</span>
+    </a>
 
-<style>
-nav{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding-bottom:1rem;border-bottom:1px solid var(--line)}
-nav .brand{font-weight:700;font-size:1.15rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
-nav .menu{display:flex;gap:1.3rem;font-size:.95rem}
-nav .menu a{color:var(--muted);text-decoration:none;font-weight:500}
-nav .menu a:hover{color:var(--accent)}
-@media (max-width:36rem){nav .menu{gap:.9rem}}
-</style>
+    <div class="flex items-center gap-5 text-sm font-medium text-stone-600 dark:text-stone-400">
+      <a href="#projects" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Projects</a>
+      <a href="#now" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Now</a>
+      <a href="#stack" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Stack</a>
+      <a href="#contact" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Contact</a>
+    </div>
+  </nav>
+</header>
