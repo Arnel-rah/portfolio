@@ -10,34 +10,33 @@ import Footer from "../components/Footer.astro";
 const projects = [
   {
     title: "Secure Deploy Kit",
-    description: "Infrastructure as Code automation template featuring pipeline vulnerability scanning and single-command remote deployment.",
+    description: "An infrastructure-as-code toolkit with built-in pipeline vulnerability scanning and single-command deployment.",
     tech: ["Terraform", "GitHub Actions", "Trivy"],
     repo: "https://github.com/Arnel-rah",
-    badge: "Open Source",
+    badge: "Featured",
   },
   {
     title: "GhostPort",
-    description: "Remote port and system process monitoring tool streaming real-time status data over gRPC with a Terminal UI.",
-    tech: ["Go", "gRPC", "Bubble Tea", "Docker"],
+    description: "A remote port and process monitoring tool streaming real-time status data over gRPC, with a terminal UI.",
+    tech: ["Go", "gRPC", "Docker"],
     repo: "https://github.com/Arnel-rah",
   },
   {
-    title: "BugSight",
-    description: "Lightweight error monitoring crate published on crates.io for structured application logging and runtime diagnostics.",
-    tech: ["Rust", "crates.io"],
+    title: "TunePipe",
+    description: "A terminal application for streaming YouTube audio, built as a fast and dependency-light TUI.",
+    tech: ["Go", "TUI"],
     repo: "https://github.com/Arnel-rah",
-    badge: "Crate",
   },
   {
     title: "Cinema Reservation API",
-    description: "RESTful backend service handling seat booking workflows, transactional concurrency, and schedule management.",
+    description: "A RESTful backend service handling seat booking workflows, transactional concurrency, and schedule management.",
     tech: ["Java", "Spring Boot", "PostgreSQL"],
     repo: "https://github.com/Arnel-rah",
   },
   {
     title: "Air Quality ETL Pipeline",
-    description: "Automated data pipeline harvesting environmental metrics, cleaning dataset distributions, and outputting analytical reports.",
-    tech: ["Python", "Open-Meteo API", "Power BI"],
+    description: "An automated data pipeline collecting environmental metrics, cleaning the dataset, and producing analytical reports.",
+    tech: ["Python", "ETL"],
     repo: "https://github.com/Arnel-rah",
   },
 ];
@@ -47,8 +46,9 @@ const projects = [
 
   <Hero
     name="RAHARINANDRASANA Willys Sadi Arnel"
-    role="Junior Backend & Cloud Automation Engineer"
-    intro="I design automated infrastructure, secure CI/CD pipelines, and high-performance backend systems. Specialized in Go, Java, and Rust. Based in Madagascar, open to remote work worldwide."
+    initials="WA"
+    role="Backend & Cloud Automation Engineer"
+    intro="I design automated infrastructure, secure CI/CD pipelines, and high-performance backend systems — specializing in Go, Java, and Python. Based in Madagascar, working remotely."
   />
 
   <NowSection />
@@ -58,10 +58,10 @@ const projects = [
       <h2 class="text-base font-bold text-stone-900 dark:text-stone-100">
         Featured Projects
       </h2>
-      <a 
-        href="https://github.com/Arnel-rah" 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <a
+        href="https://github.com/Arnel-rah"
+        target="_blank"
+        rel="noopener noreferrer"
         class="text-xs font-mono text-stone-500 dark:text-stone-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
       >
         View all on GitHub ↗
@@ -79,26 +79,23 @@ const projects = [
     </h2>
     <dl class="mt-1">
       <InfoRow label="Infrastructure">
-        Terraform, Docker, Docker Compose, Kubernetes, LocalStack, Linux (Debian, Solus)
+        Terraform, Docker, Linux
       </InfoRow>
       <InfoRow label="CI/CD & Security">
-        GitHub Actions, Trivy, Git workflows
+        GitHub Actions, Trivy
       </InfoRow>
       <InfoRow label="Languages">
-        Go, Java (Spring Boot), Rust, Python, TypeScript / Node.js
-      </InfoRow>
-      <InfoRow label="Databases">
-        PostgreSQL, Supabase, Redis, MongoDB, Prisma, JDBC
+        Go, Java (Spring Boot), Python
       </InfoRow>
       <InfoRow label="Cloud Platforms">
-        DigitalOcean, Azure, AWS (LocalStack), Vercel
+        DigitalOcean, Azure
       </InfoRow>
     </dl>
   </section>
 
   <section id="contact" class="mb-12">
     <h2 class="text-base font-bold text-stone-900 dark:text-stone-100 pb-2 border-b border-stone-200 dark:border-stone-800">
-      Contact & Links
+      Contact
     </h2>
     <dl class="mt-1">
       <InfoRow label="Email">

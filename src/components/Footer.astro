@@ -8,10 +8,10 @@ const { name, sourceUrl = "#" } = Astro.props;
 <footer class="mt-16 pt-6 border-t border-stone-200 dark:border-stone-800/80 flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 font-mono">
   <span>© {new Date().getFullYear()} {name}</span>
   {sourceUrl && sourceUrl !== "#" && (
-    <a 
-      href={sourceUrl} 
-      target="_blank" 
-      rel="noopener noreferrer" 
+    <a
+      href={sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       class="hover:text-stone-900 dark:hover:text-stone-200 underline underline-offset-4 decoration-stone-300 dark:decoration-stone-700 transition-colors"
     >
       Source code
