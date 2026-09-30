@@ -12,8 +12,7 @@ const { name, initials, role, intro } = Astro.props;
 
 <section class="mb-12 font-mono">
   <div class="flex items-center gap-5">
-    <!-- Avatar avec dégradé -->
-    <div class="shrink-0 w-20 h-20 rounded-full bg-gradient-to-tr from-sky-400 via-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/10 border border-cyan-300/30">
+    <div class="shrink-0 w-20 h-20 rounded-full bg-linear-to-tr from-sky-400 via-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/10 border border-cyan-300/30">
       <span class="font-mono text-xl font-bold text-stone-950 tracking-wider">
         {initials}
       </span>
@@ -29,12 +28,10 @@ const { name, initials, role, intro } = Astro.props;
     </div>
   </div>
 
-  <!-- Texte d'intro en italique monospace -->
   <p class="font-mono italic text-stone-400 text-sm sm:text-base leading-relaxed mt-6 max-w-2xl text-pretty">
     {intro}
   </p>
 
-  <!-- Icônes seules sans labels -->
   <div class="mt-5 flex items-center gap-5">
     <a
       href="https://github.com/Arnel-rah"
@@ -61,7 +58,7 @@ const { name, initials, role, intro } = Astro.props;
     </a>
 
     <a
-      href="mailto:you@example.com"
+      href="mailto:sadiarnel145@gmail.com"
       aria-label="Email"
       class="text-stone-400 hover:text-stone-100 transition-colors"
     >
