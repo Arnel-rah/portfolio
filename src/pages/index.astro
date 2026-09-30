@@ -11,23 +11,27 @@ import Footer from "../components/Footer.astro";
 const projects = [
   {
     title: "Secure Deploy Kit",
-    description: "An infrastructure-as-code toolkit with built-in pipeline vulnerability scanning and single-command deployment.",
+    description: "An infrastructure-as-code project provisioning cloud resources locally with Terraform and LocalStack, backed by a Go demo API secured with OIDC token verification.",
+    tech: ["Terraform", "LocalStack", "Go"],
     repo: "https://github.com/Arnel-rah",
     badge: "Featured",
   },
   {
     title: "GhostPort",
     description: "A remote port and process monitoring tool streaming real-time status data over gRPC, with a terminal UI.",
+    tech: ["Go", "gRPC", "Docker"],
     repo: "https://github.com/Arnel-rah",
   },
   {
     title: "TunePipe",
     description: "A terminal application for streaming YouTube audio, built as a fast and dependency-light TUI.",
+    tech: ["Go", "TUI"],
     repo: "https://github.com/Arnel-rah",
   },
   {
     title: "Cinema Reservation API",
-    description: "A RESTful backend service handling seat booking workflows, transactional concurrency, and schedule management.",
+    description: "A RESTful backend service built with the Poja framework, handling seat booking workflows, transactional concurrency, and schedule management.",
+    tech: ["Java", "Spring Boot", "Poja"],
     repo: "https://github.com/Arnel-rah",
   },
   {
@@ -39,21 +43,21 @@ const projects = [
 ];
 
 const achievements = [
-  { text: "Automate deployments end-to-end, from commit to production, using Terraform and GitHub Actions." },
-  { text: "Work across Go, Java (Spring Boot) and Python for backend services and infrastructure tooling." },
-  { text: "Build and ship personal projects, from IaC toolkits to gRPC services and terminal apps." },
+  { text: "Provision and secure cloud infrastructure as code, using Terraform and LocalStack." },
+  { text: "Work across Go and Java (Spring Boot, Poja) for backend services and infrastructure tooling." },
+  { text: "Build and ship personal projects end-to-end, from IaC toolkits to gRPC services and terminal apps." },
   { text: "Based in Madagascar, building in public on GitHub.", href: "https://github.com/Arnel-rah" },
 ];
 ---
 
-<Layout title="RAHARINANDRASANA Willys Sadi Arnel — Backend & Cloud Automation Engineer">
+<Layout title="RAHARINANDRASANA Willys Sadi Arnel — DevOps & Cloud Engineer">
   <Nav />
 
   <Hero
     name="RAHARINANDRASANA Willys Sadi Arnel"
     initials="WA"
-    role="Backend & Cloud Automation Engineer"
-    intro="I design automated infrastructure, secure CI/CD pipelines, and high-performance backend systems — specializing in Go, Java, and Python. Based in Madagascar, working remotely."
+    role="DevOps & Cloud Engineer"
+    intro="I design automated infrastructure, secure deployments, and backend services — specializing in Go and Java, with a focus on Terraform and cloud tooling. Based in Madagascar, working remotely."
   />
 
   <AchievementList items={achievements} />
@@ -91,13 +95,13 @@ const achievements = [
     </div>
     <dl class="mt-2">
       <InfoRow label="Infrastructure">
-        Terraform, Docker, Linux
+        Terraform, LocalStack, Docker, Linux
       </InfoRow>
       <InfoRow label="CI/CD & Security">
-        GitHub Actions, Trivy
+        GitHub Actions, OIDC
       </InfoRow>
       <InfoRow label="Languages">
-        Go, Java (Spring Boot), Python
+        Go, Java (Spring Boot, Poja), Python
       </InfoRow>
       <InfoRow label="Cloud Platforms">
         DigitalOcean, Azure
@@ -118,7 +122,7 @@ const achievements = [
           href="mailto:you@example.com"
           class="text-stone-300 hover:text-white underline underline-offset-4 decoration-stone-700 hover:decoration-stone-400 transition-colors"
         >
-          sadiarnel145@gmail.com
+          you@example.com
         </a>
       </InfoRow>
       <InfoRow label="GitHub">
@@ -138,7 +142,7 @@ const achievements = [
           rel="noopener noreferrer"
           class="text-stone-300 hover:text-white underline underline-offset-4 decoration-stone-700 hover:decoration-stone-400 transition-colors"
         >
-          linkedin.com/in/arnel-raharinandrasana
+          linkedin.com/in/your-profile
         </a>
       </InfoRow>
     </dl>
