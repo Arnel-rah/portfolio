@@ -2,11 +2,10 @@
 interface Props {
   title: string;
   description: string;
-  tech: string[];
   repo: string;
   badge?: string;
 }
-const { title, description, tech, repo, badge } = Astro.props;
+const { title, description, repo, badge } = Astro.props;
 ---
 
 <article class="group py-4 border-b border-stone-800/60 last:border-b-0 font-mono">
@@ -31,14 +30,6 @@ const { title, description, tech, repo, badge } = Astro.props;
           {badge}
         </span>
       )}
-    </div>
-
-    <div class="flex flex-wrap items-center gap-1.5 shrink-0 mt-1 sm:mt-0">
-      {tech.map((item) => (
-        <span class="text-[11px] px-2 py-0.5 rounded bg-stone-900/90 border border-stone-800/80 text-stone-400 group-hover:border-stone-700/80 transition-colors">
-          {item}
-        </span>
-      ))}
     </div>
   </div>
 
