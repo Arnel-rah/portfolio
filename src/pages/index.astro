@@ -23,51 +23,60 @@ const projects = [
     repo: "https://github.com/Arnel-rah",
   },
   {
-    title: "TunePipe",
-    description: "A terminal application for streaming YouTube audio, built as a fast and dependency-light TUI.",
-    tech: ["Go", "TUI"],
-    repo: "https://github.com/Arnel-rah",
-  },
-  {
-    title: "Cinema Reservation API",
-    description: "A RESTful backend service built with the Poja framework, handling seat booking workflows, transactional concurrency, and schedule management.",
-    tech: ["Java", "Spring Boot", "Poja"],
-    repo: "https://github.com/Arnel-rah",
-  },
-  {
-    title: "Air Quality ETL Pipeline",
-    description: "An automated data pipeline collecting environmental metrics, cleaning the dataset, and producing analytical reports.",
-    tech: ["Python", "ETL"],
+    title: "Eco-Scale Daemon",
+    description: "A Go background daemon interacting with the Docker SDK to dynamically scale or stop containers based on energy policies.",
+    tech: ["Go", "Docker SDK"],
     repo: "https://github.com/Arnel-rah",
   },
 ];
 
 const achievements = [
-  { text: "Provision and secure cloud infrastructure as code, using Terraform and LocalStack." },
-  { text: "Work across Go and Java (Spring Boot, Poja) for backend services and infrastructure tooling." },
-  { text: "Build and ship personal projects end-to-end, from IaC toolkits to gRPC services and terminal apps." },
+  { text: "Provision and secure cloud infrastructure as code using Terraform, LocalStack, and AWS." },
+  { text: "Automate containerized workloads and cloud deployment pipelines with Docker and GitHub Actions." },
+  { text: "Build cloud automation daemons, CLI tools, and backend microservices in Go." },
   { text: "Based in Madagascar, building in public on GitHub.", href: "https://github.com/Arnel-rah" },
+];
+
+const cloudStack = [
+  {
+    category: "Cloud & Infrastructure as Code",
+    items: ["Terraform", "AWS", "LocalStack", "DigitalOcean"],
+  },
+  {
+    category: "Containers & Orchestration",
+    items: ["Docker", "Docker Compose", "Docker SDK"],
+  },
+  {
+    category: "Automation & Languages",
+    items: ["Go", "Python", "GitHub Actions", "Bash / Zsh"],
+  },
+  {
+    category: "System & Core Tooling",
+    items: ["Debian Linux", "Solus OS", "WSL 2", "Git"],
+  },
 ];
 ---
 
-<Layout title="RAHARINANDRASANA Willys Sadi Arnel — DevOps & Cloud Engineer">
+<Layout title="RAHARINANDRASANA Willys Sadi Arnel — Cloud & Infrastructure Engineer">
   <Nav />
 
   <Hero
     name="RAHARINANDRASANA Willys Sadi Arnel"
     initials="WA"
-    role="DevOps & Cloud Engineer"
-    intro="I design automated infrastructure, secure deployments, and backend services — specializing in Go and Java, with a focus on Terraform and cloud tooling. Based in Madagascar, working remotely."
+    role="Cloud & Infrastructure Engineer"
+    intro="I design automated cloud infrastructure, declarative deployment pipelines, and cloud-native tools — specializing in Terraform, Go, Docker, and AWS workflows. Based in Madagascar, working remotely."
   />
 
   <AchievementList items={achievements} />
 
   <NowSection />
+
+  <!-- Section Projets -->
   <section id="projects" class="mb-12 font-mono">
     <div class="flex items-center justify-between pb-2 border-b border-stone-800/80">
       <div class="flex items-center gap-2">
-        <span class="text-stone-600 select-none text-sm sm:text-base font-medium">//</span>
-        <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-200">
+        <span class="text-stone-500 select-none text-sm sm:text-base font-medium">//</span>
+        <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-100">
           Featured Projects
         </h2>
       </div>
@@ -75,7 +84,7 @@ const achievements = [
         href="https://github.com/Arnel-rah"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-xs font-mono text-stone-500 hover:text-stone-300 transition-colors"
+        class="text-xs font-mono text-stone-400 hover:text-stone-200 transition-colors"
       >
         View all on GitHub ↗
       </a>
@@ -86,43 +95,52 @@ const achievements = [
     </div>
   </section>
 
+  <!-- Section Technical Stack (Ultra-minimaliste sans cartes ni status badge) -->
   <section id="stack" class="mb-12 font-mono">
-    <div class="flex items-center gap-2 pb-2 border-b border-stone-800/80">
-      <span class="text-stone-600 select-none text-sm sm:text-base font-medium">//</span>
-      <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-200">
-        Technical Stack
+    <div class="flex items-center gap-2 pb-2 border-b border-stone-800/80 mb-3">
+      <span class="text-stone-500 select-none text-sm sm:text-base font-medium">//</span>
+      <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-100">
+        Cloud Tech Stack
       </h2>
     </div>
-    <dl class="mt-2">
-      <InfoRow label="Infrastructure">
-        Terraform, LocalStack, Docker, Linux
-      </InfoRow>
-      <InfoRow label="CI/CD & Security">
-        GitHub Actions, OIDC
-      </InfoRow>
-      <InfoRow label="Languages">
-        Go, Java (Spring Boot, Poja), Python
-      </InfoRow>
-      <InfoRow label="Cloud Platforms">
-        DigitalOcean, Azure
-      </InfoRow>
-    </dl>
+
+    <div class="divide-y divide-stone-800/40">
+      {cloudStack.map((group) => (
+        <div class="py-3.5 first:pt-1 last:pb-0">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-stone-200">
+              {group.category}
+            </h3>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5">
+            {group.items.map((item) => (
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs bg-stone-900/60 border border-stone-800/80 text-stone-300 hover:border-stone-600 hover:text-white transition-all">
+                <span class="text-stone-600 text-[10px] select-none font-semibold">#</span>
+                <span>{item}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
   </section>
 
+  <!-- Section Contact -->
   <section id="contact" class="mb-12 font-mono">
     <div class="flex items-center gap-2 pb-2 border-b border-stone-800/80">
-      <span class="text-stone-600 select-none text-sm sm:text-base font-medium">//</span>
-      <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-200">
+      <span class="text-stone-500 select-none text-sm sm:text-base font-medium">//</span>
+      <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-100">
         Contact
       </h2>
     </div>
     <dl class="mt-2">
       <InfoRow label="Email">
         <a
-          href="mailto:you@example.com"
-          class="text-stone-300 hover:text-white underline underline-offset-4 decoration-stone-700 hover:decoration-stone-400 transition-colors"
+          href="mailto:sadiarnel145@gmail.com"
+          class="text-stone-200 hover:text-white underline underline-offset-4 decoration-stone-600 hover:decoration-stone-400 transition-colors"
         >
-          you@example.com
+          sadiarnel145@gmail.com
         </a>
       </InfoRow>
       <InfoRow label="GitHub">
@@ -130,19 +148,19 @@ const achievements = [
           href="https://github.com/Arnel-rah"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-stone-300 hover:text-white underline underline-offset-4 decoration-stone-700 hover:decoration-stone-400 transition-colors"
+          class="text-stone-200 hover:text-white underline underline-offset-4 decoration-stone-600 hover:decoration-stone-400 transition-colors"
         >
           github.com/Arnel-rah
         </a>
       </InfoRow>
       <InfoRow label="LinkedIn">
         <a
-          href="#"
+          href="https://linkedin.com/in/arnel-raharinandrasana"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-stone-300 hover:text-white underline underline-offset-4 decoration-stone-700 hover:decoration-stone-400 transition-colors"
+          class="text-stone-200 hover:text-white underline underline-offset-4 decoration-stone-600 hover:decoration-stone-400 transition-colors"
         >
-          linkedin.com/in/your-profile
+          linkedin.com/in/arnel-raharinandrasana
         </a>
       </InfoRow>
     </dl>
