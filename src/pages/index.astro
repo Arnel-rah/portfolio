@@ -67,11 +67,12 @@ const cloudStack = [
 
   <NowSection />
 
+  <!-- Section Projets -->
   <section id="projects" class="mb-12 font-mono">
-    <div class="flex items-center justify-between pb-2 border-b border-stone-800/80">
+    <div class="flex items-center justify-between pb-2 border-b border-stone-300/80 dark:border-stone-800/80 transition-colors">
       <div class="flex items-center gap-2">
-        <span class="text-stone-500 select-none text-sm sm:text-base font-medium">//</span>
-        <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-100">
+        <span class="text-stone-400 dark:text-stone-500 select-none text-sm sm:text-base font-medium">//</span>
+        <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-900 dark:text-stone-100 transition-colors">
           Featured Projects
         </h2>
       </div>
@@ -79,7 +80,7 @@ const cloudStack = [
         href="https://github.com/Arnel-rah"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-xs font-mono text-stone-400 hover:text-teal-400 transition-colors"
+        class="text-xs font-mono text-stone-600 dark:text-stone-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
       >
         View all on GitHub ↗
       </a>
@@ -90,17 +91,18 @@ const cloudStack = [
     </div>
   </section>
 
+  <!-- Section Technical Stack -->
   <section id="stack" class="mb-12 font-mono">
-    <div class="flex items-center gap-2 pb-2 border-b border-stone-800/80">
-      <span class="text-stone-500 select-none text-sm sm:text-base font-medium">//</span>
-      <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-100">
+    <div class="flex items-center gap-2 pb-2 border-b border-stone-300/80 dark:border-stone-800/80 transition-colors">
+      <span class="text-stone-400 dark:text-stone-500 select-none text-sm sm:text-base font-medium">//</span>
+      <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-900 dark:text-stone-100 transition-colors">
         Cloud Tech Stack
       </h2>
     </div>
     <dl class="mt-2 ml-3.5">
       {cloudStack.map((group) => (
         <InfoRow label={group.category}>
-          <span class="text-stone-300 font-normal">
+          <span class="text-stone-700 dark:text-stone-300 font-normal transition-colors">
             {group.items.join(" · ")}
           </span>
         </InfoRow>
@@ -108,10 +110,11 @@ const cloudStack = [
     </dl>
   </section>
 
+  <!-- Section Contact -->
   <section id="contact" class="mb-12 font-mono">
-    <div class="flex items-center gap-2 pb-2 border-b border-stone-800/80">
-      <span class="text-stone-500 select-none text-sm sm:text-base font-medium">//</span>
-      <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-100">
+    <div class="flex items-center gap-2 pb-2 border-b border-stone-300/80 dark:border-stone-800/80 transition-colors">
+      <span class="text-stone-400 dark:text-stone-500 select-none text-sm sm:text-base font-medium">//</span>
+      <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-900 dark:text-stone-100 transition-colors">
         Contact
       </h2>
     </div>
@@ -119,7 +122,7 @@ const cloudStack = [
       <InfoRow label="Email">
         <a
           href="mailto:sadiarnel145@gmail.com"
-          class="text-stone-200 hover:text-teal-400 underline underline-offset-4 decoration-stone-600 hover:decoration-teal-400/60 transition-colors"
+          class="text-stone-800 dark:text-stone-200 hover:text-teal-600 dark:hover:text-teal-400 underline underline-offset-4 decoration-stone-400 dark:decoration-stone-600 hover:decoration-teal-600/60 dark:hover:decoration-teal-400/60 transition-colors"
         >
           sadiarnel145@gmail.com
         </a>
@@ -129,7 +132,7 @@ const cloudStack = [
           href="https://github.com/Arnel-rah"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-stone-200 hover:text-teal-400 underline underline-offset-4 decoration-stone-600 hover:decoration-teal-400/60 transition-colors"
+          class="text-stone-800 dark:text-stone-200 hover:text-teal-600 dark:hover:text-teal-400 underline underline-offset-4 decoration-stone-400 dark:decoration-stone-600 hover:decoration-teal-600/60 dark:hover:decoration-teal-400/60 transition-colors"
         >
           github.com/Arnel-rah
         </a>
@@ -139,13 +142,13 @@ const cloudStack = [
           href="https://linkedin.com/in/arnel-raharinandrasana"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-stone-200 hover:text-teal-400 underline underline-offset-4 decoration-stone-600 hover:decoration-teal-400/60 transition-colors"
+          class="text-stone-800 dark:text-stone-200 hover:text-teal-600 dark:hover:text-teal-400 underline underline-offset-4 decoration-stone-400 dark:decoration-stone-600 hover:decoration-teal-600/60 dark:hover:decoration-teal-400/60 transition-colors"
         >
           linkedin.com/in/arnel-raharinandrasana
         </a>
       </InfoRow>
     </dl>
-</section>
+  </section>
 
   <Footer name="RAHARINANDRASANA Willys Sadi Arnel" sourceUrl="https://github.com/Arnel-rah" />
 </Layout>
