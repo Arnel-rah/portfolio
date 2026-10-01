@@ -8,6 +8,8 @@ const {
   title,
   description = "RAHARINANDRASANA Willys Sadi Arnel — Backend & Cloud Automation Engineer based in Madagascar."
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.dev");
 ---
 
 <!DOCTYPE html>
@@ -15,9 +17,23 @@ const {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content={description} />
-  <title>{title}</title>
+  <meta name="theme-color" content="#0d0d0d" />
   
+  <title>{title}</title>
+  <meta name="title" content={title} />
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={Astro.url} />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={description} />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -32,16 +48,26 @@ const {
     }
   </script>
 </head>
-<body class="bg-[#222020] text-stone-300 font-mono antialiased min-h-screen selection:bg-stone-800 selection:text-white relative">
-  <div class="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-stone-500/30 to-transparent"></div>
+<body class="bg-[#0d0d0d] text-stone-200 font-mono antialiased min-h-screen selection:bg-teal-950 selection:text-teal-200 relative">
+  <div class="fixed top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-teal-500/30 to-transparent pointer-events-none z-50"></div>
 
-  <div class="max-w-2xl mx-auto px-5 sm:px-6 py-10 sm:py-16">
+  <main class="max-w-2xl mx-auto px-5 sm:px-6 py-10 sm:py-16">
     <slot />
-  </div>
+  </main>
 </body>
 </html>
 
 <style is:global>
   @import "tailwindcss";
   @custom-variant dark (&:where(.dark, .dark *));
+
+  html {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 </style>

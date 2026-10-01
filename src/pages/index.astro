@@ -50,10 +50,6 @@ const cloudStack = [
     category: "Automation & Languages",
     items: ["Go", "Python", "GitHub Actions", "Bash / Zsh"],
   },
-  {
-    category: "System & Core Tooling",
-    items: ["Debian Linux", "Solus OS", "WSL 2", "Git"],
-  },
 ];
 ---
 
@@ -64,14 +60,13 @@ const cloudStack = [
     name="RAHARINANDRASANA Willys Sadi Arnel"
     initials="WA"
     role="Cloud & Infrastructure Engineer"
-    intro="I design automated cloud infrastructure, declarative deployment pipelines, and cloud-native tools — specializing in Terraform, Go, Docker, and AWS workflows. Based in Madagascar, working remotely."
+    intro="I design automated cloud infrastructure, declarative deployment pipelines, and cloud-native tools — specializing in Terraform, Go, Docker, and AWS workflows."
   />
 
   <AchievementList items={achievements} />
 
   <NowSection />
 
-  <!-- Section Projets -->
   <section id="projects" class="mb-12 font-mono">
     <div class="flex items-center justify-between pb-2 border-b border-stone-800/80">
       <div class="flex items-center gap-2">
@@ -84,49 +79,35 @@ const cloudStack = [
         href="https://github.com/Arnel-rah"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-xs font-mono text-stone-400 hover:text-stone-200 transition-colors"
+        class="text-xs font-mono text-stone-400 hover:text-teal-400 transition-colors"
       >
         View all on GitHub ↗
       </a>
     </div>
 
-    <div class="mt-4">
+    <div class="mt-2">
       {projects.map((p) => <ProjectItem {...p} />)}
     </div>
   </section>
 
-  <!-- Section Technical Stack (Ultra-minimaliste sans cartes ni status badge) -->
   <section id="stack" class="mb-12 font-mono">
-    <div class="flex items-center gap-2 pb-2 border-b border-stone-800/80 mb-3">
+    <div class="flex items-center gap-2 pb-2 border-b border-stone-800/80">
       <span class="text-stone-500 select-none text-sm sm:text-base font-medium">//</span>
       <h2 class="text-sm sm:text-base font-semibold uppercase tracking-wider text-stone-100">
         Cloud Tech Stack
       </h2>
     </div>
-
-    <div class="divide-y divide-stone-800/40">
+    <dl class="mt-2 ml-3.5">
       {cloudStack.map((group) => (
-        <div class="py-3.5 first:pt-1 last:pb-0">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
-            <h3 class="text-xs font-semibold uppercase tracking-wider text-stone-200">
-              {group.category}
-            </h3>
-          </div>
-
-          <div class="flex flex-wrap gap-1.5">
-            {group.items.map((item) => (
-              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded text-xs bg-stone-900/60 border border-stone-800/80 text-stone-300 hover:border-stone-600 hover:text-white transition-all">
-                <span class="text-stone-600 text-[10px] select-none font-semibold">#</span>
-                <span>{item}</span>
-              </span>
-            ))}
-          </div>
-        </div>
+        <InfoRow label={group.category}>
+          <span class="text-stone-300 font-normal">
+            {group.items.join(" · ")}
+          </span>
+        </InfoRow>
       ))}
-    </div>
+    </dl>
   </section>
 
-  <!-- Section Contact -->
   <section id="contact" class="mb-12 font-mono">
     <div class="flex items-center gap-2 pb-2 border-b border-stone-800/80">
       <span class="text-stone-500 select-none text-sm sm:text-base font-medium">//</span>
@@ -134,11 +115,11 @@ const cloudStack = [
         Contact
       </h2>
     </div>
-    <dl class="mt-2">
+    <dl class="mt-2 ml-3.5">
       <InfoRow label="Email">
         <a
           href="mailto:sadiarnel145@gmail.com"
-          class="text-stone-200 hover:text-white underline underline-offset-4 decoration-stone-600 hover:decoration-stone-400 transition-colors"
+          class="text-stone-200 hover:text-teal-400 underline underline-offset-4 decoration-stone-600 hover:decoration-teal-400/60 transition-colors"
         >
           sadiarnel145@gmail.com
         </a>
@@ -148,7 +129,7 @@ const cloudStack = [
           href="https://github.com/Arnel-rah"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-stone-200 hover:text-white underline underline-offset-4 decoration-stone-600 hover:decoration-stone-400 transition-colors"
+          class="text-stone-200 hover:text-teal-400 underline underline-offset-4 decoration-stone-600 hover:decoration-teal-400/60 transition-colors"
         >
           github.com/Arnel-rah
         </a>
@@ -158,13 +139,13 @@ const cloudStack = [
           href="https://linkedin.com/in/arnel-raharinandrasana"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-stone-200 hover:text-white underline underline-offset-4 decoration-stone-600 hover:decoration-stone-400 transition-colors"
+          class="text-stone-200 hover:text-teal-400 underline underline-offset-4 decoration-stone-600 hover:decoration-teal-400/60 transition-colors"
         >
           linkedin.com/in/arnel-raharinandrasana
         </a>
       </InfoRow>
     </dl>
-  </section>
+</section>
 
   <Footer name="RAHARINANDRASANA Willys Sadi Arnel" sourceUrl="https://github.com/Arnel-rah" />
 </Layout>
