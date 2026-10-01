@@ -2,9 +2,9 @@ name: DevOps Deployment & IaC Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [prod]
   pull_request:
-    branches: [main]
+    branches: [prod]
 
 jobs:
   code-quality:
@@ -46,7 +46,7 @@ jobs:
   deploy-production:
     name: Deploy to Production
     needs: [code-quality, terraform-check]
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/prod' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
