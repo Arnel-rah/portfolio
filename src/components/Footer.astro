@@ -6,6 +6,6 @@ interface Props {
 const { name, sourceUrl = "#" } = Astro.props;
 ---
 
-<footer class="mt-16 pt-6 border-t border-stone-300 dark:border-stone-800/80 flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 font-mono transition-colors duration-200">
-  <span>© {new Date().getFullYear()} {name}</span>
+<footer class="mt-20 pt-6 border-t border-stone-300 dark:border-stone-700 flex items-center justify-between text-sm text-stone-600 dark:text-stone-400 font-mono transition-colors duration-200">
+  <span class="font-medium">© {new Date().getFullYear()} {name}</span>
 </footer>
