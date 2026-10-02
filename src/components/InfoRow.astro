@@ -5,11 +5,11 @@ interface Props {
 const { label } = Astro.props;
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-[10.5rem_1fr] gap-1 sm:gap-4 py-3.5 border-b border-stone-300 dark:border-stone-800 last:border-b-0 text-base font-mono text-left transition-colors duration-200">
-  <dt class="font-bold text-stone-600 dark:text-stone-400 text-xs sm:text-sm uppercase tracking-wider self-start pt-0.5 transition-colors duration-200">
+<div class="grid grid-cols-1 sm:grid-cols-[10.5rem_1fr] gap-1 sm:gap-4 py-3 border-b border-stone-300/60 dark:border-stone-800/60 last:border-b-0 text-sm text-left transition-colors duration-200">
+  <dt class="font-semibold text-stone-500 dark:text-stone-500 text-xs uppercase tracking-wider self-start pt-0.5 transition-colors duration-200">
     {label}
   </dt>
-  <dd class="text-stone-900 dark:text-stone-100 m-0 text-left transition-colors duration-200 break-words font-medium">
+  <dd class="text-stone-700 dark:text-stone-300 m-0 text-left transition-colors duration-200 break-words">
     <slot />
   </dd>
 </div>
