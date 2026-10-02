@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import InfoRow from "../components/InfoRow.astro";
+---
+
+<Layout title="About — RAHARINANDRASANA Willys Sadi Arnel">
+  <Nav />
+
+  <section class="mb-12 sm:mb-16 font-mono">
+    <div class="flex items-center gap-2 pb-2">
+      <span class="text-stone-500 dark:text-stone-400 font-bold select-none text-sm">//</span>
+      <h1 class="text-sm sm:text-base font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+        About Me
+      </h1>
+    </div>
+
+    <div class="mt-3 space-y-4 text-stone-800 dark:text-stone-200 text-sm sm:text-base leading-relaxed text-pretty">
+      <p>
+        I'm a junior backend and cloud engineer based in Antananarivo, Madagascar, currently expanding my expertise in software engineering at Haute École d'Informatique (HEI).
+      </p>
+      <p>
+        My focus centers on infrastructure automation, cloud-native tooling, and building reliable backend services using technologies like Go, Terraform, Docker, and Rust.
+      </p>
+    </div>
+  </section>
+
+  <section class="mb-12 sm:mb-16 font-mono">
+    <div class="flex items-center gap-2 pb-2">
+      <span class="text-stone-500 dark:text-stone-400 font-bold select-none text-sm">//</span>
+      <h2 class="text-sm sm:text-base font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+        Background & Education
+      </h2>
+    </div>
+
+    <dl class="mt-3 space-y-1 sm:space-y-2">
+      <InfoRow label="Current">
+        <span class="text-stone-900 dark:text-stone-100 font-medium text-sm sm:text-base">
+          3rd-year Software Engineering Student at HEI Madagascar
+        </span>
+      </InfoRow>
+      <InfoRow label="Previous">
+        <span class="text-stone-900 dark:text-stone-100 font-medium text-sm sm:text-base">
+          Mathematics & Computer Science at University of Ankatso
+        </span>
+      </InfoRow>
+      <InfoRow label="Focus">
+        <span class="text-stone-900 dark:text-stone-100 font-medium text-sm sm:text-base">
+          Cloud Automation, Infrastructure as Code, CLI/TUI Tools
+        </span>
+      </InfoRow>
+    </dl>
+  </section>
+
+  <Footer name="RAHARINANDRASANA Willys Sadi Arnel" sourceUrl="https://github.com/Arnel-rah" />
+</Layout>

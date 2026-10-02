@@ -4,14 +4,23 @@ import { Sun, Moon } from "@lucide/astro";
 
 <header class="mb-16 font-mono">
   <nav class="flex items-center justify-between pb-3 border-b border-stone-300 dark:border-stone-700 transition-colors">
-    <a
-      href="/"
-      class="text-sm sm:text-base tracking-widest uppercase transition-colors group"
-    >
-      <span class="font-bold text-stone-900 dark:text-stone-100 group-hover:text-black dark:group-hover:text-white transition-colors">
-        arnel
-      </span>
-    </a>
+    <div class="flex items-center gap-4 text-sm sm:text-base">
+      <a
+        href="/"
+        class="tracking-widest uppercase transition-colors group"
+      >
+        <span class="font-bold text-stone-900 dark:text-stone-100 group-hover:text-black dark:group-hover:text-white transition-colors">
+          arnel
+        </span>
+      </a>
+      <span class="text-stone-400 dark:text-stone-600">/</span>
+      <a
+        href="/about"
+        class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
+      >
+        about
+      </a>
+    </div>
 
     <button
       id="theme-toggle"
