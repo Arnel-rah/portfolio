@@ -67,12 +67,11 @@ const cloudStack = [
 
   <NowSection />
 
-  <!-- Section Projets -->
   <section id="projects" class="mb-16 font-mono">
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-stone-300 dark:border-stone-700">
       <div class="flex items-center gap-2">
         <span class="text-stone-500 dark:text-stone-400 font-bold select-none text-sm">//</span>
-        <h2 class="text-sm sm:text-base font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+        <h2 class="text-base sm:text-lg font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100" style="font-family: 'Cinzel', serif; letter-spacing: 0.05em;">
           Featured Projects
         </h2>
       </div>
@@ -91,18 +90,18 @@ const cloudStack = [
     </div>
   </section>
 
-  <!-- Section Technical Stack -->
+
   <section id="stack" class="mb-16 font-mono">
     <div class="flex items-center gap-2 pb-3 border-b border-stone-300 dark:border-stone-700">
       <span class="text-stone-500 dark:text-stone-400 font-bold select-none text-sm">//</span>
-      <h2 class="text-sm sm:text-base font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+      <h2 class="text-base sm:text-lg font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100" style="font-family: 'Cinzel', serif; letter-spacing: 0.05em;">
         Cloud Tech Stack
       </h2>
     </div>
     <dl class="mt-4 space-y-2">
       {cloudStack.map((group) => (
         <InfoRow label={group.category}>
-          <span class="text-stone-900 dark:text-stone-100 text-base font-medium break-words">
+          <span class="text-stone-900 dark:text-stone-100 text-base font-medium wrap-break-word">
             {group.items.join(" · ")}
           </span>
         </InfoRow>
@@ -110,11 +109,10 @@ const cloudStack = [
     </dl>
   </section>
 
-  <!-- Section Contact -->
   <section id="contact" class="mb-16 font-mono">
     <div class="flex items-center gap-2 pb-3 border-b border-stone-300 dark:border-stone-700">
       <span class="text-stone-500 dark:text-stone-400 font-bold select-none text-sm">//</span>
-      <h2 class="text-sm sm:text-base font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
+      <h2 class="text-base sm:text-lg font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100" style="font-family: 'Cinzel', serif; letter-spacing: 0.05em;">
         Contact & Links
       </h2>
     </div>
