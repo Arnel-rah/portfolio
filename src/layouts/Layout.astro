@@ -36,9 +36,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Anti-FOUC Script -->
   <script is:inline>
     const stored = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -52,7 +51,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
 <body class="bg-stone-100 text-stone-900 dark:bg-[#0d0d0d] dark:text-stone-100 font-mono antialiased min-h-screen selection:bg-stone-300 selection:text-stone-950 dark:selection:bg-stone-700 dark:selection:text-white relative transition-colors duration-200 overflow-x-hidden">
   <div class="fixed top-0 left-0 right-0 h-0.5 bg-stone-300 dark:bg-stone-800 pointer-events-none z-50"></div>
 
-  <main class="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+  <main class="max-w-2xl mx-auto px-4 sm:px-6 py-5 sm:py-9">
     <slot />
   </main>
 </body>
