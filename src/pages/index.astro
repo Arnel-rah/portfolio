@@ -5,36 +5,47 @@ import Hero from "../components/Hero.astro";
 import AchievementList from "../components/AchievementList.astro";
 import NowSection from "../components/NowSection.astro";
 import ProjectItem from "../components/ProjectItem.astro";
-import InfoRow from "../components/InfoRow.astro";
 import Footer from "../components/Footer.astro";
 
 const projects = [
   {
     title: "Secure Deploy Kit",
-    description: "An infrastructure-as-code project provisioning cloud resources locally with Terraform and LocalStack, backed by a Go demo API secured with OIDC token verification.",
+    description:
+      "An infrastructure-as-code project provisioning cloud resources locally with Terraform and LocalStack, backed by a Go demo API secured with OIDC token verification.",
     tech: ["Terraform", "LocalStack", "Go"],
     repo: "https://github.com/Arnel-rah",
     badge: "Featured",
   },
   {
     title: "GhostPort",
-    description: "A remote port and process monitoring tool streaming real-time status data over gRPC, with a terminal UI.",
+    description:
+      "A remote port and process monitoring tool streaming real-time status data over gRPC, with a terminal UI.",
     tech: ["Go", "gRPC", "Docker"],
     repo: "https://github.com/Arnel-rah",
   },
   {
     title: "Eco-Scale Daemon",
-    description: "A Go background daemon interacting with the Docker SDK to dynamically scale or stop containers based on energy policies.",
+    description:
+      "A Go background daemon interacting with the Docker SDK to dynamically scale or stop containers based on energy policies.",
     tech: ["Go", "Docker SDK"],
     repo: "https://github.com/Arnel-rah",
   },
 ];
 
 const achievements = [
-  { text: "Provision and secure cloud infrastructure as code using Terraform, LocalStack, and AWS." },
-  { text: "Automate containerized workloads and cloud deployment pipelines with Docker and GitHub Actions." },
-  { text: "Build cloud automation daemons, CLI tools, and backend microservices in Go." },
-  { text: "Based in Madagascar, building in public on GitHub.", href: "https://github.com/Arnel-rah" },
+  {
+    text: "Provision and secure cloud infrastructure as code using Terraform, LocalStack, and AWS.",
+  },
+  {
+    text: "Automate containerized workloads and cloud deployment pipelines with Docker and GitHub Actions.",
+  },
+  {
+    text: "Build cloud automation daemons, CLI tools, and backend microservices in Go.",
+  },
+  {
+    text: "Based in Madagascar, building in public on GitHub.",
+    href: "https://github.com/Arnel-rah",
+  },
 ];
 
 const cloudStack = [
@@ -49,6 +60,24 @@ const cloudStack = [
   {
     category: "Languages & Ops",
     items: ["Go", "Python", "GitHub Actions", "Bash / Zsh"],
+  },
+];
+
+const contacts = [
+  {
+    label: "Email",
+    value: "hello@sadiarnel.me",
+    href: "mailto:hello@sadiarnel.me",
+  },
+  {
+    label: "GitHub",
+    value: "github.com/Arnel-rah",
+    href: "https://github.com/Arnel-rah",
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/arnel-raharinandrasana",
+    href: "https://linkedin.com/in/arnel-raharinandrasana",
   },
 ];
 ---
@@ -67,84 +96,67 @@ const cloudStack = [
 
   <NowSection />
 
-  <section id="projects" class="mb-16">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-stone-300 dark:border-stone-700">
-      <div class="flex items-center gap-2">
-        <span class="text-stone-500 dark:text-stone-400 font-bold select-none text-sm">//</span>
-        <h2 class="text-base sm:text-lg font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
-          Featured Projects
-        </h2>
-      </div>
+  <section id="projects" class="mb-10 sm:mb-12">
+    <div class="flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:justify-between mb-4">
+      <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100">
+        Featured Projects
+      </h2>
       <a
         href="https://github.com/Arnel-rah"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white underline underline-offset-4 transition-colors"
+        class="text-sm text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 underline underline-offset-4 transition-colors w-fit"
       >
         View all on GitHub ↗
       </a>
     </div>
 
-    <div class="mt-4">
+    <div class="flex flex-col gap-2 sm:gap-3">
       {projects.map((p) => <ProjectItem {...p} />)}
     </div>
   </section>
 
-  <section id="stack" class="mb-16">
-    <div class="flex items-center gap-2 pb-3 border-b border-stone-300 dark:border-stone-700">
-      <span class="text-stone-500 dark:text-stone-400 font-bold select-none text-sm">//</span>
-      <h2 class="text-base sm:text-lg font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
-        Cloud Tech Stack
-      </h2>
-    </div>
-    <dl class="mt-4 space-y-2">
+  <section id="stack" class="mb-10 sm:mb-12">
+    <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100 mb-3 sm:mb-4">
+      Cloud Tech Stack
+    </h2>
+
+    <ul class="flex flex-col gap-3">
       {cloudStack.map((group) => (
-        <InfoRow label={group.category}>
-          <span class="text-stone-900 dark:text-stone-100 text-base font-medium wrap-break-word">
+        <li class="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-5">
+          <span class="text-sm font-medium text-stone-500 dark:text-stone-400 sm:w-32 shrink-0">
+            {group.category}
+          </span>
+          <span class="text-base text-stone-800 dark:text-stone-200 leading-snug">
             {group.items.join(" · ")}
           </span>
-        </InfoRow>
+        </li>
       ))}
-    </dl>
+    </ul>
   </section>
 
-  <section id="contact" class="mb-16">
-    <div class="flex items-center gap-2 pb-3 border-b border-stone-300 dark:border-stone-700">
-      <span class="text-stone-500 dark:text-stone-400 font-bold select-none text-sm">//</span>
-      <h2 class="text-base sm:text-lg font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
-        Contact & Links
-      </h2>
-    </div>
-    <dl class="mt-4 space-y-2">
-      <InfoRow label="Email">
-        <a
-          href="mailto:hello@sadiarnel.me"
-          class="text-stone-900 dark:text-stone-100 text-base font-medium hover:text-black dark:hover:text-white underline underline-offset-4 decoration-stone-400 dark:decoration-stone-500 transition-colors break-all"
-        >
-          hello@sadiarnel.me
-        </a>
-      </InfoRow>
-      <InfoRow label="GitHub">
-        <a
-          href="https://github.com/Arnel-rah"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-stone-900 dark:text-stone-100 text-base font-medium hover:text-black dark:hover:text-white underline underline-offset-4 decoration-stone-400 dark:decoration-stone-500 transition-colors break-all"
-        >
-          github.com/Arnel-rah
-        </a>
-      </InfoRow>
-      <InfoRow label="LinkedIn">
-        <a
-          href="https://linkedin.com/in/arnel-raharinandrasana"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-stone-900 dark:text-stone-100 text-base font-medium hover:text-black dark:hover:text-white underline underline-offset-4 decoration-stone-400 dark:decoration-stone-500 transition-colors break-all"
-        >
-          linkedin.com/in/arnel-raharinandrasana
-        </a>
-      </InfoRow>
-    </dl>
+  <section id="contact" class="mb-10 sm:mb-12">
+    <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100 mb-3 sm:mb-4">
+      Get in touch
+    </h2>
+
+    <ul class="flex flex-col gap-3">
+      {contacts.map((item) => (
+        <li class="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-5">
+          <span class="text-sm font-medium text-stone-500 dark:text-stone-400 sm:w-20 shrink-0">
+            {item.label}
+          </span>
+          <a
+            href={item.href}
+            target={item.href.startsWith("http") ? "_blank" : undefined}
+            rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            class="text-base text-stone-900 dark:text-stone-100 underline underline-offset-4 decoration-stone-400 dark:decoration-stone-500 hover:decoration-stone-600 dark:hover:decoration-stone-300 transition-colors break-all"
+          >
+            {item.value}
+          </a>
+        </li>
+      ))}
+    </ul>
   </section>
 
   <Footer name="RAHARINANDRASANA Willys Sadi Arnel" sourceUrl="https://github.com/Arnel-rah" />
