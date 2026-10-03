@@ -104,16 +104,19 @@ const contacts = [
 
   <NowSection />
 
-  <section id="projects" class="mb-10 sm:mb-12">
-    <div class="flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:justify-between mb-4 sm:mb-6">
-      <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100">
-        Featured Projects
-      </h2>
+  <section id="projects" class="mb-8 sm:mb-12 font-mono">
+    <div class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between mb-4 sm:mb-6">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-block w-2 h-2 rounded-full bg-indigo-500"></span>
+        <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100 tracking-tight font-mono">
+          Featured Projects
+        </h2>
+      </div>
       <a
         href="https://github.com/Arnel-rah"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-sm sm:text-base text-stone-500 dark:text-stone-400 hover:text-indigo-600 dark:hover:text-indigo-400 underline underline-offset-4 transition-colors w-fit"
+        class="text-xs sm:text-sm text-stone-500 dark:text-stone-400 hover:text-indigo-600 dark:hover:text-indigo-400 underline underline-offset-4 transition-colors w-fit font-mono"
       >
         View all on GitHub ↗
       </a>
@@ -124,28 +127,31 @@ const contacts = [
     </div>
   </section>
 
-  <section id="stack" class="mb-10 sm:mb-12">
-    <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100 mb-6 sm:mb-8">
-      Cloud Tech Stack
-    </h2>
+  <section id="stack" class="mb-8 sm:mb-12 font-mono">
+    <div class="flex items-center gap-2.5 mb-5 sm:mb-8">
+      <span class="inline-block w-2 h-2 rounded-full bg-indigo-500"></span>
+      <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100 tracking-tight font-mono">
+        Cloud Tech Stack
+      </h2>
+    </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-10 gap-y-8">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-x-10 font-mono">
       {cloudStack.map((group) => (
-        <div class="flex flex-col gap-4">
-          <div class="flex items-center gap-2.5 pb-3 border-b border-stone-200 dark:border-stone-800">
+        <div class="flex flex-col gap-4 font-mono">
+          <div class="flex items-center gap-2.5 pb-3 border-b border-stone-200 dark:border-stone-800 font-mono">
             <Icon name={group.uiIcon} class="w-4 h-4 text-stone-400 dark:text-stone-500" />
-            <h3 class="text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-stone-500 dark:text-stone-400">
+            <h3 class="text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-stone-500 dark:text-stone-400 font-mono">
               {group.category}
             </h3>
           </div>
 
-          <ul class="flex flex-col gap-3">
+          <ul class="flex flex-col gap-3 font-mono">
             {group.items.map((item) => (
-              <li class="flex items-center gap-3">
+              <li class="flex items-center gap-3 font-mono">
                 <span class="shrink-0 w-10 h-10 flex items-center justify-center text-stone-700 dark:text-stone-200 [&_svg]:w-6 [&_svg]:h-6">
                   <Icon name={item.icon} />
                 </span>
-                <span class="text-sm sm:text-base font-medium text-stone-700 dark:text-stone-300">
+                <span class="text-base sm:text-lg font-medium text-stone-700 dark:text-stone-300 font-mono">
                   {item.name}
                 </span>
               </li>
@@ -156,12 +162,15 @@ const contacts = [
     </div>
   </section>
 
-  <section id="contact" class="mb-10 sm:mb-12">
-    <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100 mb-3 sm:mb-4">
-      Get in touch
-    </h2>
+  <section id="contact" class="mb-8 sm:mb-12 font-mono">
+    <div class="flex items-center gap-2.5 mb-3 sm:mb-4">
+      <span class="inline-block w-2 h-2 rounded-full bg-indigo-500"></span>
+      <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100 tracking-tight font-mono">
+        Get in touch
+      </h2>
+    </div>
 
-    <ul class="flex items-center gap-4">
+    <ul class="flex items-center gap-4 font-mono">
       {contacts.map((item) => (
         <li>
           <a
@@ -170,7 +179,7 @@ const contacts = [
             rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
             aria-label={item.label}
             title={item.label}
-            class="inline-flex items-center justify-center w-11 h-11 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-600 dark:text-indigo-400 transition-colors hover:bg-indigo-500/20 hover:text-indigo-700 dark:hover:text-indigo-300 [&_svg]:w-5 [&_svg]:h-5"
+            class="inline-flex items-center justify-center w-11 h-11 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-600 dark:text-indigo-400 transition-colors hover:bg-indigo-500/20 hover:text-indigo-700 dark:hover:text-indigo-300 [&_svg]:w-5 [&_svg]:h-5 font-mono"
           >
             <Icon name={item.icon} />
             <span class="sr-only">{item.value}</span>
