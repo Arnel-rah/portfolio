@@ -6,13 +6,18 @@ import AchievementList from "../components/AchievementList.astro";
 import NowSection from "../components/NowSection.astro";
 import ProjectItem from "../components/ProjectItem.astro";
 import Footer from "../components/Footer.astro";
+import { Icon } from "astro-icon/components";
 
 const projects = [
   {
     title: "Secure Deploy Kit",
     description:
       "An infrastructure-as-code project provisioning cloud resources locally with Terraform and LocalStack, backed by a Go demo API secured with OIDC token verification.",
-    tech: ["Terraform", "LocalStack", "Go"],
+    tech: [
+      { name: "Terraform", icon: "simple-icons:terraform" },
+      { name: "LocalStack", icon: "lucide:layers" },
+      { name: "Go", icon: "simple-icons:go" },
+    ],
     repo: "https://github.com/Arnel-rah",
     badge: "Featured",
   },
@@ -20,65 +25,68 @@ const projects = [
     title: "GhostPort",
     description:
       "A remote port and process monitoring tool streaming real-time status data over gRPC, with a terminal UI.",
-    tech: ["Go", "gRPC", "Docker"],
+    tech: [
+      { name: "Go", icon: "simple-icons:go" },
+      { name: "gRPC", icon: "lucide:network" },
+      { name: "Docker", icon: "simple-icons:docker" },
+    ],
     repo: "https://github.com/Arnel-rah",
   },
   {
     title: "Eco-Scale Daemon",
     description:
       "A Go background daemon interacting with the Docker SDK to dynamically scale or stop containers based on energy policies.",
-    tech: ["Go", "Docker SDK"],
+    tech: [
+      { name: "Go", icon: "simple-icons:go" },
+      { name: "Docker SDK", icon: "simple-icons:docker" },
+    ],
     repo: "https://github.com/Arnel-rah",
   },
 ];
 
 const achievements = [
-  {
-    text: "Provision and secure cloud infrastructure as code using Terraform, LocalStack, and AWS.",
-  },
-  {
-    text: "Automate containerized workloads and cloud deployment pipelines with Docker and GitHub Actions.",
-  },
-  {
-    text: "Build cloud automation daemons, CLI tools, and backend microservices in Go.",
-  },
-  {
-    text: "Based in Madagascar, building in public on GitHub.",
-    href: "https://github.com/Arnel-rah",
-  },
+  { text: "Provision and secure cloud infrastructure as code using Terraform, LocalStack, and AWS." },
+  { text: "Automate containerized workloads and cloud deployment pipelines with Docker and GitHub Actions." },
+  { text: "Build cloud automation daemons, CLI tools, and backend microservices in Go." },
+  { text: "Based in Madagascar, building in public on GitHub.", href: "https://github.com/Arnel-rah" },
 ];
 
 const cloudStack = [
   {
     category: "Cloud & IaC",
-    items: ["Terraform", "AWS", "LocalStack", "DigitalOcean"],
+    uiIcon: "lucide:cloud",
+    items: [
+      { name: "Terraform", icon: "simple-icons:terraform" },
+      { name: "AWS", icon: "simple-icons:amazonaws" },
+      { name: "LocalStack", icon: "lucide:layers" },
+      { name: "DigitalOcean", icon: "simple-icons:digitalocean" },
+    ],
   },
   {
     category: "Containers",
-    items: ["Docker", "Docker Compose", "Docker SDK"],
+    uiIcon: "lucide:container",
+    items: [
+      { name: "Docker", icon: "simple-icons:docker" },
+      { name: "Compose", icon: "simple-icons:docker" },
+      { name: "Docker SDK", icon: "simple-icons:docker" },
+    ],
   },
   {
     category: "Languages & Ops",
-    items: ["Go", "Python", "GitHub Actions", "Bash / Zsh"],
+    uiIcon: "lucide:terminal",
+    items: [
+      { name: "Go", icon: "simple-icons:go" },
+      { name: "Python", icon: "simple-icons:python" },
+      { name: "GitHub Actions", icon: "simple-icons:githubactions" },
+      { name: "Bash / Zsh", icon: "simple-icons:gnubash" },
+    ],
   },
 ];
 
 const contacts = [
-  {
-    label: "Email",
-    value: "hello@sadiarnel.me",
-    href: "mailto:hello@sadiarnel.me",
-  },
-  {
-    label: "GitHub",
-    value: "github.com/Arnel-rah",
-    href: "https://github.com/Arnel-rah",
-  },
-  {
-    label: "LinkedIn",
-    value: "linkedin.com/in/arnel-raharinandrasana",
-    href: "https://linkedin.com/in/arnel-raharinandrasana",
-  },
+  { label: "Email", value: "hello@sadiarnel.me", href: "mailto:hello@sadiarnel.me", icon: "lucide:mail" },
+  { label: "GitHub", value: "github.com/Arnel-rah", href: "https://github.com/Arnel-rah", icon: "simple-icons:github" },
+  { label: "LinkedIn", value: "linkedin.com/in/arnel-raharinandrasana", href: "https://linkedin.com/in/arnel-raharinandrasana", icon: "simple-icons:linkedin" },
 ];
 ---
 
@@ -97,7 +105,7 @@ const contacts = [
   <NowSection />
 
   <section id="projects" class="mb-10 sm:mb-12">
-    <div class="flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:justify-between mb-4">
+    <div class="flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:justify-between mb-4 sm:mb-6">
       <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100">
         Featured Projects
       </h2>
@@ -105,34 +113,47 @@ const contacts = [
         href="https://github.com/Arnel-rah"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-sm text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 underline underline-offset-4 transition-colors w-fit"
+        class="text-sm sm:text-base text-stone-500 dark:text-stone-400 hover:text-indigo-600 dark:hover:text-indigo-400 underline underline-offset-4 transition-colors w-fit"
       >
         View all on GitHub ↗
       </a>
     </div>
 
-    <div class="flex flex-col gap-2 sm:gap-3">
+    <div class="flex flex-col">
       {projects.map((p) => <ProjectItem {...p} />)}
     </div>
   </section>
 
   <section id="stack" class="mb-10 sm:mb-12">
-    <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100 mb-3 sm:mb-4">
+    <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100 mb-6 sm:mb-8">
       Cloud Tech Stack
     </h2>
 
-    <ul class="flex flex-col gap-3">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-10 gap-y-8">
       {cloudStack.map((group) => (
-        <li class="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-5">
-          <span class="text-sm font-medium text-stone-500 dark:text-stone-400 sm:w-32 shrink-0">
-            {group.category}
-          </span>
-          <span class="text-base text-stone-800 dark:text-stone-200 leading-snug">
-            {group.items.join(" · ")}
-          </span>
-        </li>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-2.5 pb-3 border-b border-stone-200 dark:border-stone-800">
+            <Icon name={group.uiIcon} class="w-4 h-4 text-stone-400 dark:text-stone-500" />
+            <h3 class="text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-stone-500 dark:text-stone-400">
+              {group.category}
+            </h3>
+          </div>
+
+          <ul class="flex flex-col gap-3">
+            {group.items.map((item) => (
+              <li class="flex items-center gap-3">
+                <span class="shrink-0 w-10 h-10 flex items-center justify-center text-stone-700 dark:text-stone-200 [&_svg]:w-6 [&_svg]:h-6">
+                  <Icon name={item.icon} />
+                </span>
+                <span class="text-sm sm:text-base font-medium text-stone-700 dark:text-stone-300">
+                  {item.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       ))}
-    </ul>
+    </div>
   </section>
 
   <section id="contact" class="mb-10 sm:mb-12">
@@ -140,19 +161,19 @@ const contacts = [
       Get in touch
     </h2>
 
-    <ul class="flex flex-col gap-3">
+    <ul class="flex items-center gap-4">
       {contacts.map((item) => (
-        <li class="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-5">
-          <span class="text-sm font-medium text-stone-500 dark:text-stone-400 sm:w-20 shrink-0">
-            {item.label}
-          </span>
+        <li>
           <a
             href={item.href}
             target={item.href.startsWith("http") ? "_blank" : undefined}
             rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            class="text-base text-stone-900 dark:text-stone-100 underline underline-offset-4 decoration-stone-400 dark:decoration-stone-500 hover:decoration-stone-600 dark:hover:decoration-stone-300 transition-colors break-all"
+            aria-label={item.label}
+            title={item.label}
+            class="inline-flex items-center justify-center w-11 h-11 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-600 dark:text-indigo-400 transition-colors hover:bg-indigo-500/20 hover:text-indigo-700 dark:hover:text-indigo-300 [&_svg]:w-5 [&_svg]:h-5"
           >
-            {item.value}
+            <Icon name={item.icon} />
+            <span class="sr-only">{item.value}</span>
           </a>
         </li>
       ))}
