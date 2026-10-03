@@ -1,29 +1,42 @@
----
----
-
 <section id="now" class="mb-10 sm:mb-12">
-  <div class="flex items-baseline justify-between gap-3 mb-3 sm:mb-4">
-    <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100">
-      Now
-    </h2>
-    <span class="text-xs sm:text-sm text-stone-500 dark:text-stone-400 shrink-0">
+  <div class="flex items-baseline justify-between gap-3 mb-4 pb-2 border-b border-stone-200/80 dark:border-stone-800/80">
+    <div class="flex items-center gap-2.5">
+      <!-- Petit indicateur actif discret (sans animation tape-à-l'œil) -->
+      <span class="inline-block w-2 h-2 rounded-full bg-indigo-500"></span>
+      <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100 tracking-tight">
+        Now
+      </h2>
+    </div>
+    
+    <span class="text-xs sm:text-sm text-stone-500 dark:text-stone-400 shrink-0 font-mono">
       September 2026
     </span>
   </div>
 
-  <ul class="space-y-2.5 sm:space-y-3 text-base text-stone-700 dark:text-stone-300 leading-relaxed">
-    <li>
-      Building an infrastructure-as-code toolkit with pipeline vulnerability scanning, using
-      <strong class="font-semibold text-stone-900 dark:text-stone-100">Terraform</strong> and
-      <strong class="font-semibold text-stone-900 dark:text-stone-100">GitHub Actions</strong>.
+  <ul class="space-y-3 text-sm sm:text-base text-stone-700 dark:text-stone-300 leading-relaxed">
+    <li class="flex items-start gap-2.5">
+      <span class="text-indigo-600 dark:text-indigo-400 font-mono select-none">›</span>
+      <span>
+        Building an infrastructure-as-code toolkit with pipeline vulnerability scanning, using
+        <strong class="font-semibold text-stone-900 dark:text-stone-100">Terraform</strong> and
+        <strong class="font-semibold text-stone-900 dark:text-stone-100">GitHub Actions</strong>.
+      </span>
     </li>
-    <li>
-      Writing lightweight CLI and TUI tools in
-      <strong class="font-semibold text-stone-900 dark:text-stone-100">Go</strong>, including a
-      gRPC-based port monitor and a terminal audio player.
+
+    <li class="flex items-start gap-2.5">
+      <span class="text-indigo-600 dark:text-indigo-400 font-mono select-none">›</span>
+      <span>
+        Writing lightweight CLI and TUI tools in
+        <strong class="font-semibold text-stone-900 dark:text-stone-100">Go</strong>, including a
+        gRPC-based port monitor and a terminal audio player.
+      </span>
     </li>
-    <li>
-      Deepening my DevOps and cloud practice, from container orchestration to observability.
+
+    <li class="flex items-start gap-2.5">
+      <span class="text-indigo-600 dark:text-indigo-400 font-mono select-none">›</span>
+      <span>
+        Deepening my DevOps and cloud practice, from container orchestration to observability.
+      </span>
     </li>
   </ul>
 </section>
