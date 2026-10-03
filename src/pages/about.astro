@@ -17,16 +17,22 @@ import InfoRow from "../components/InfoRow.astro";
     </div>
 
     <div class="space-y-4 text-stone-700 dark:text-stone-300 text-base sm:text-lg leading-relaxed text-pretty max-w-2xl font-mono">
-      <p class="font-mono">
-        I'm a junior backend and cloud engineer based in Antananarivo, Madagascar,
-        currently expanding my expertise in software engineering at Haute École
-        d'Informatique (HEI).
-      </p>
-      <p class="font-mono">
-        My focus centers on infrastructure automation, cloud-native tooling, and
-        building reliable backend services using technologies like Go, Terraform,
-        Docker, and Rust.
-      </p>
+      <div class="relative pl-3 sm:pl-4 font-mono">
+        <span class="absolute left-0 top-0 text-indigo-600 dark:text-indigo-400 font-mono select-none">›</span>
+        <p class="font-mono">
+          I'm a junior backend and cloud engineer based in Antananarivo, Madagascar,
+          currently expanding my expertise in software engineering at Haute École
+          d'Informatique (HEI).
+        </p>
+      </div>
+      <div class="relative pl-3 sm:pl-4 font-mono">
+        <span class="absolute left-0 top-0 text-indigo-600 dark:text-indigo-400 font-mono select-none">›</span>
+        <p class="font-mono">
+          My focus centers on infrastructure automation, cloud-native tooling, and
+          building reliable backend services using technologies like Go, Terraform,
+          Docker, and Rust.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -39,21 +45,27 @@ import InfoRow from "../components/InfoRow.astro";
     </div>
 
     <dl class="space-y-3 font-mono">
-      <InfoRow label="Current">
-        <span class="text-stone-900 dark:text-stone-100 font-medium text-base sm:text-lg font-mono">
-          3rd-year Software Engineering Student at HEI Madagascar
-        </span>
-      </InfoRow>
-      <InfoRow label="Previous">
-        <span class="text-stone-900 dark:text-stone-100 font-medium text-base sm:text-lg font-mono">
-          Mathematics & Computer Science at University of Ankatso
-        </span>
-      </InfoRow>
-      <InfoRow label="Focus">
-        <span class="text-stone-900 dark:text-stone-100 font-medium text-base sm:text-lg font-mono">
-          Cloud Automation, Infrastructure as Code, CLI/TUI Tools
-        </span>
-      </InfoRow>
+      <div class="relative pl-3 sm:pl-4 font-mono">
+        <InfoRow label="Current">
+          <span class="text-stone-900 dark:text-stone-100 font-medium text-base sm:text-lg font-mono">
+            3rd-year Software Engineering Student at HEI Madagascar
+          </span>
+        </InfoRow>
+      </div>
+      <div class="relative pl-3 sm:pl-4 font-mono">
+        <InfoRow label="Previous">
+          <span class="text-stone-900 dark:text-stone-100 font-medium text-base sm:text-lg font-mono">
+            Mathematics & Computer Science at University of Ankatso
+          </span>
+        </InfoRow>
+      </div>
+      <div class="relative pl-3 sm:pl-4 font-mono">
+        <InfoRow label="Focus">
+          <span class="text-stone-900 dark:text-stone-100 font-medium text-base sm:text-lg font-mono">
+            Cloud Automation, Infrastructure as Code, CLI/TUI Tools
+          </span>
+        </InfoRow>
+      </div>
     </dl>
   </section>
 
