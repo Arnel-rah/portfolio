@@ -11,25 +11,25 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<section id="about" class="mb-10 sm:mb-12 font-mono">
-  <div class="flex items-center gap-2.5 mb-3 sm:mb-4">
-    <span class="inline-block w-2 h-2 rounded-full bg-indigo-500"></span>
-    <h2 class="text-base sm:text-lg font-semibold text-stone-900 dark:text-stone-100 tracking-tight font-mono">
+<section id="about" class="mb-12 sm:mb-20">
+  <div class="mb-4 flex items-center gap-2.5">
+    <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+    <h2 class="text-lg font-bold tracking-tight text-slate-950 dark:text-white sm:text-xl">
       Things I've done
     </h2>
   </div>
 
-  <ul class="space-y-2.5 sm:space-y-3 text-base sm:text-lg text-stone-700 dark:text-stone-300 leading-relaxed font-mono">
+  <ul class="space-y-3 text-base leading-relaxed text-slate-700 dark:text-slate-300 sm:text-lg">
     {items.map((item) => (
       <li class="flex items-start gap-2.5">
-        <span class="text-indigo-500 dark:text-indigo-400 shrink-0 select-none mt-0.5">•</span>
+        <span class="mt-0.5 shrink-0 select-none text-orange-500">•</span>
         <span>
           {item.href ? (
             <a
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-stone-900 dark:text-stone-100 underline underline-offset-4 decoration-stone-400 dark:decoration-stone-500 hover:text-indigo-600 dark:hover:text-indigo-400 hover:decoration-indigo-500 transition-colors font-mono"
+              class="font-mono text-slate-900 underline decoration-orange-400 underline-offset-4 transition-colors hover:text-orange-600 dark:text-white dark:hover:text-orange-400"
             >
               {item.text}
             </a>
