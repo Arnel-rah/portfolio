@@ -17,8 +17,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f4" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d0d0d" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f5ef" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111827" />
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
@@ -37,7 +37,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -53,9 +53,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
   </head>
 
   <body
-    class="min-h-screen bg-stone-100 text-stone-900 dark:bg-[#0d0d0d] dark:text-stone-100 font-mono antialiased selection:bg-stone-300 selection:text-stone-950 dark:selection:bg-stone-700 dark:selection:text-white transition-colors duration-200 overflow-x-hidden"
+    class="min-h-screen overflow-x-hidden bg-[#f7f5ef] text-slate-900 antialiased transition-colors duration-200 selection:bg-orange-200 selection:text-slate-950 dark:bg-[#111827] dark:text-slate-100 dark:selection:bg-orange-900 dark:selection:text-white"
   >
-    <main class="mx-auto w-full max-w-2xl px-4 pt-3 pb-8 sm:px-6 sm:pt-6 sm:pb-12">
+    <main class="mx-auto w-full max-w-4xl px-4 pb-10 pt-3 sm:px-8 sm:pb-16 sm:pt-6">
       <slot />
     </main>
   </body>
@@ -65,8 +65,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
   @import "tailwindcss";
   @custom-variant dark (&:where(.dark, .dark *));
 
+  @font-face {
+    font-family: "Geist Pixel Grid";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/GeistPixel-Grid.woff2") format("woff2");
+  }
+
   html {
-    font-family: "JetBrains Mono", monospace;
+    font-family: "Manrope", sans-serif;
     -webkit-text-size-adjust: 100%;
   }
 
@@ -76,8 +84,28 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
     -moz-osx-font-smoothing: grayscale;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Geist", sans-serif;
+  }
+
+  .hero-name {
+    font-family: "Geist Pixel Grid", "Geist Mono", monospace;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+
   a,
   button {
     -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid #f97316;
+    outline-offset: 3px;
   }
 </style>
