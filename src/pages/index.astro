@@ -141,66 +141,62 @@ const contacts = [
   </section>
 
   <section id="stack" class="mb-12 sm:mb-20">
-    <div class="mb-5 flex items-center gap-2.5 sm:mb-8">
-      <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
-      <h2 class="section-title text-slate-950 dark:text-white">
-        Cloud Tech Stack
-      </h2>
-    </div>
+  <div class="mb-5 flex items-center gap-2.5 sm:mb-8">
+    <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+    <h2 class="section-title text-slate-950 dark:text-white">
+      Cloud Tech Stack
+    </h2>
+  </div>
 
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
-      {cloudStack.map((group) => (
-        <div class="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
-          <div class="flex items-center gap-2.5">
-            <Icon name={group.uiIcon} class="h-4 w-4 text-orange-500" />
-            <h3 class="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400 sm:text-sm">
-              {group.category}
-            </h3>
-          </div>
-
-          <ul class="flex flex-col gap-3 font-mono">
-            {group.items.map((item) => (
-              <li class="flex items-center gap-3 font-mono">
-                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200 [&_svg]:h-5 [&_svg]:w-5">
-                  <Icon name={item.icon} />
-                </span>
-                <span class="font-mono text-sm font-semibold text-slate-700 dark:text-slate-300 sm:text-base">
-                  {item.name}
-                </span>
-              </li>
-            ))}
-          </ul>
+  <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
+    {cloudStack.map((group) => (
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-2.5 border-b border-slate-300 pb-3 dark:border-slate-700">
+          <Icon name={group.uiIcon} class="h-4 w-4 text-slate-500 dark:text-slate-400" />
+          <h3 class="text-xs font-semibold uppercase tracking-[0.12em] text-slate-700 dark:text-slate-200 sm:text-sm">
+            {group.category}
+          </h3>
         </div>
-      ))}
-    </div>
-  </section>
+
+        <ul class="flex flex-col gap-3 font-mono">
+          {group.items.map((item) => (
+            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 [&_svg]:h-5 [&_svg]:w-5 [&_svg]:shrink-0">
+              <Icon name={item.icon} />
+              <span class="text-sm font-semibold sm:text-base">{item.name}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
 
 <section id="contact" class="mb-0 sm:mb-12">
-    <div class="mb-4 flex items-center gap-2.5">
-      <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
-      <h2 class="section-title text-slate-950 dark:text-white">
-        Get in touch
-      </h2>
-    </div>
+  <div class="mb-4 flex items-center gap-2.5">
+    <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+    <h2 class="section-title text-slate-950 dark:text-white">
+      Get in touch
+    </h2>
+  </div>
 
-    <ul class="flex items-center gap-4 font-mono">
-      {contacts.map((item) => (
-        <li>
-          <a
-            href={item.href}
-            target={item.href.startsWith("http") ? "_blank" : undefined}
-            rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            aria-label={item.label}
-            title={item.label}
-            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-600 transition-colors hover:border-orange-500 hover:bg-orange-500 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-orange-500 dark:hover:bg-orange-500 dark:hover:text-white [&_svg]:h-5 [&_svg]:w-5"
-          >
-            <Icon name={item.icon} />
-            <span class="sr-only">{item.value}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </section>
+  <ul class="flex items-center gap-4 font-mono">
+    {contacts.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          target={item.href.startsWith("http") ? "_blank" : undefined}
+          rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+          aria-label={item.label}
+          title={item.label}
+          class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 [&_svg]:h-5 [&_svg]:w-5"
+        >
+          <Icon name={item.icon} />
+          <span class="sr-only">{item.value}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
 
   <Footer name="RAHARINANDRASANA Willys Sadi Arnel" sourceUrl="https://github.com/Arnel-rah" />
 </Layout>
