@@ -51,43 +51,43 @@ const stack = [
   <Nav />
 
   <!-- About me -->
-  <section class="mb-14 sm:mb-20">
+  <section class="mb-12 sm:mb-20">
     <div class="mb-6 flex items-center gap-2.5">
-      <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+      <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
       <h1 class="section-title text-slate-950 dark:text-white">About Me</h1>
     </div>
 
-    <div class="max-w-2xl space-y-4 text-base leading-relaxed text-slate-700 text-pretty dark:text-slate-300 sm:text-lg">
+    <div class="max-w-2xl space-y-5 text-base leading-7 text-slate-700 text-pretty dark:text-slate-300 sm:space-y-4 sm:text-lg sm:leading-relaxed">
       {intro.map((paragraph) => (
-        <div class="relative pl-3 font-mono sm:pl-4">
+        <div class="relative pl-5 font-mono sm:pl-6">
           <span class="absolute left-0 top-0 select-none font-mono text-orange-500">›</span>
-          <p>{paragraph}</p>
+          <p class="break-words">{paragraph}</p>
         </div>
       ))}
     </div>
   </section>
 
   <!-- What I do -->
-  <section class="mb-14 sm:mb-20">
+  <section class="mb-12 sm:mb-20">
     <div class="mb-6 flex items-center gap-2.5">
-      <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+      <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
       <h2 class="section-title text-slate-950 dark:text-white">What I Do</h2>
     </div>
 
-    <ul class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+    <ul class="grid grid-cols-1 gap-x-8 gap-y-7 sm:grid-cols-2 sm:gap-y-6">
       {services.map((item) => (
         <li class="border-t border-slate-300 pt-4 dark:border-slate-700">
-          <h3 class="font-mono text-base font-semibold text-slate-950 dark:text-white sm:text-lg">
+          <h3 class="font-mono text-lg font-semibold text-slate-950 dark:text-white">
             {item.title}
           </h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400 sm:text-base">
+          <p class="mt-2 text-base leading-7 text-slate-600 dark:text-slate-400 sm:leading-relaxed">
             {item.text}
           </p>
         </li>
       ))}
     </ul>
 
-    <p class="mt-6 font-mono text-sm text-slate-500 dark:text-slate-400">
+    <p class="mt-7 font-mono text-base text-slate-500 dark:text-slate-400">
       Real examples in{" "}
       <a href="/#projects" class="text-slate-900 underline decoration-orange-400 underline-offset-4 dark:text-white">
         Featured Projects
@@ -96,16 +96,16 @@ const stack = [
   </section>
 
   <!-- How I work -->
-  <section class="mb-14 sm:mb-20">
+  <section class="mb-12 sm:mb-20">
     <div class="mb-6 flex items-center gap-2.5">
-      <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+      <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
       <h2 class="section-title text-slate-950 dark:text-white">How I Work</h2>
     </div>
 
-    <ul class="max-w-2xl space-y-3 text-base leading-relaxed text-slate-700 dark:text-slate-300 sm:text-lg">
+    <ul class="max-w-2xl space-y-4 text-base leading-7 text-slate-700 dark:text-slate-300 sm:space-y-3 sm:text-lg sm:leading-relaxed">
       {principles.map((line) => (
-        <li class="flex items-start gap-3 font-mono sm:gap-2.5">
-          <span class="mt-px shrink-0 select-none text-orange-500">›</span>
+        <li class="flex items-start gap-3 font-mono">
+          <span class="shrink-0 select-none text-orange-500">›</span>
           <span class="min-w-0 break-words">{line}</span>
         </li>
       ))}
@@ -113,37 +113,37 @@ const stack = [
   </section>
 
   <!-- Background -->
-  <section class="mb-14 sm:mb-20">
+  <section class="mb-12 sm:mb-20">
     <div class="mb-6 flex items-center gap-2.5">
-      <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+      <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
       <h2 class="section-title text-slate-950 dark:text-white">Background</h2>
     </div>
 
-    <dl class="space-y-3 font-mono">
+    <dl class="space-y-4 font-mono sm:space-y-3">
       <div class="relative pl-3 font-mono sm:pl-4">
         <InfoRow label="Focus">
-          <span class="font-mono text-base font-semibold text-slate-900 dark:text-white sm:text-lg">
+          <span class="break-words font-mono text-base font-semibold leading-7 text-slate-900 dark:text-white sm:text-lg">
             DevOps, Cloud Automation, Infrastructure as Code
           </span>
         </InfoRow>
       </div>
       <div class="relative pl-3 font-mono sm:pl-4">
         <InfoRow label="Foundation">
-          <span class="font-mono text-base font-semibold text-slate-900 dark:text-white sm:text-lg">
+          <span class="break-words font-mono text-base font-semibold leading-7 text-slate-900 dark:text-white sm:text-lg">
             Mathematics & Computer Science, University of Ankatso
           </span>
         </InfoRow>
       </div>
       <div class="relative pl-3 font-mono sm:pl-4">
         <InfoRow label="Based in">
-          <span class="font-mono text-base font-semibold text-slate-900 dark:text-white sm:text-lg">
+          <span class="break-words font-mono text-base font-semibold leading-7 text-slate-900 dark:text-white sm:text-lg">
             Antananarivo, Madagascar (UTC+3)
           </span>
         </InfoRow>
       </div>
       <div class="relative pl-3 font-mono sm:pl-4">
         <InfoRow label="Work mode">
-          <span class="font-mono text-base font-semibold text-slate-900 dark:text-white sm:text-lg">
+          <span class="break-words font-mono text-base font-semibold leading-7 text-slate-900 dark:text-white sm:text-lg">
             Remote, freelance
           </span>
         </InfoRow>
@@ -152,17 +152,17 @@ const stack = [
   </section>
 
   <!-- Tools -->
-  <section class="mb-14 sm:mb-16">
+  <section class="mb-12 sm:mb-16">
     <div class="mb-6 flex items-center gap-2.5">
-      <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+      <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
       <h2 class="section-title text-slate-950 dark:text-white">Tools I Use</h2>
     </div>
 
-    <ul class="flex flex-wrap gap-x-6 gap-y-3 font-mono">
+    <ul class="grid grid-cols-2 gap-x-4 gap-y-4 font-mono sm:flex sm:flex-wrap sm:gap-x-6 sm:gap-y-3">
       {stack.map((item) => (
-        <li class="flex items-center gap-2.5 text-slate-700 dark:text-slate-300 [&_svg]:h-5 [&_svg]:w-5 [&_svg]:shrink-0">
+        <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 [&_svg]:h-6 [&_svg]:w-6 [&_svg]:shrink-0 sm:[&_svg]:h-5 sm:[&_svg]:w-5">
           <Icon name={item.icon} />
-          <span class="text-sm font-semibold sm:text-base">{item.name}</span>
+          <span class="text-base font-semibold">{item.name}</span>
         </li>
       ))}
     </ul>
@@ -171,16 +171,16 @@ const stack = [
   <!-- Call to action -->
   <section class="mb-8 sm:mb-12">
     <div class="mb-4 flex items-center gap-2.5">
-      <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+      <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
       <h2 class="section-title text-slate-950 dark:text-white">Work With Me</h2>
     </div>
 
-    <p class="max-w-2xl text-base leading-relaxed text-slate-700 dark:text-slate-300 sm:text-lg">
+    <p class="max-w-2xl text-base leading-7 text-slate-700 dark:text-slate-300 sm:text-lg sm:leading-relaxed">
       Open to remote freelance work in DevOps and cloud automation. Tell me about your
       infrastructure or delivery challenge at{" "}
       <a
         href="mailto:hello@sadiarnel.me"
-        class="font-mono font-semibold text-slate-950 underline decoration-orange-400 underline-offset-4 dark:text-white"
+        class="break-all font-mono font-semibold text-slate-950 underline decoration-orange-400 underline-offset-4 dark:text-white"
       >hello@sadiarnel.me</a>{" "}
       or browse my code on{" "}
       <a
