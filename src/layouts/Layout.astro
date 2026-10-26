@@ -37,6 +37,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      href="/fonts/GeistPixel-Grid.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
@@ -65,6 +72,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
   @import "tailwindcss";
   @custom-variant dark (&:where(.dark, .dark *));
 
+  @theme {
+    --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+
   @font-face {
     font-family: "Geist Pixel Grid";
     font-style: normal;
@@ -74,8 +86,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
   }
 
   html {
-    font-family: "Manrope", sans-serif;
+    font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
     -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
@@ -90,11 +103,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
   h4,
   h5,
   h6 {
-    font-family: "Geist", sans-serif;
+    font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
   }
 
   .hero-name {
-    font-family: "Geist Pixel Grid", "Geist Mono", monospace;
+    font-family: "Geist Pixel Grid", "JetBrains Mono", monospace;
     font-size: clamp(1.5rem, 8vw, 3rem);
     font-weight: 400;
     letter-spacing: -0.025em;
@@ -106,7 +119,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
   }
 
   .section-title {
-    font-family: "Geist Pixel Grid", "Geist Mono", monospace;
+    font-family: "Geist Pixel Grid", "JetBrains Mono", monospace;
     font-size: clamp(1.375rem, 6vw, 1.875rem);
     font-weight: 400;
     letter-spacing: -0.025em;
@@ -114,7 +127,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
   }
 
   .nav-name {
-    font-family: "Geist Pixel Grid", "Geist Mono", monospace;
+    font-family: "Geist Pixel Grid", "JetBrains Mono", monospace;
     font-size: clamp(1rem, 4vw, 1.25rem);
     font-weight: 400;
     letter-spacing: -0.025em;
