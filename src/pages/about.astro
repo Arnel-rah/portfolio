@@ -3,70 +3,193 @@ import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import InfoRow from "../components/InfoRow.astro";
+import { Icon } from "astro-icon/components";
+
+const intro = [
+  "I'm a DevOps and cloud engineer based in Antananarivo, Madagascar, working with international teams and clients remotely as a freelancer.",
+  "I help teams automate infrastructure, ship through reliable CI/CD pipelines, and run containerized workloads, using Terraform, Docker, GitHub Actions, AWS, and Go.",
+  "I replace manual, error-prone operations with declarative, versioned, repeatable workflows, and I build in public on GitHub so my work can be reviewed.",
+];
+
+const services = [
+  {
+    title: "Infrastructure as Code",
+    text: "Cloud resources defined in Terraform, tested locally with LocalStack, and deployed to AWS or DigitalOcean in a repeatable way.",
+  },
+  {
+    title: "CI/CD pipelines",
+    text: "GitHub Actions workflows covering build, test, security scanning, and deployment, so every change ships the same way.",
+  },
+  {
+    title: "Containers & automation",
+    text: "Dockerized workloads and Compose setups, plus Go tooling that works directly with the Docker SDK to scale or stop containers.",
+  },
+  {
+    title: "Backend & internal tools",
+    text: "Go services, CLIs, and monitoring tools, including APIs secured with OIDC token verification and gRPC-based status streaming.",
+  },
+];
+
+const principles = [
+  "Automate anything that has to be done more than twice.",
+  "Prefer declarative, versioned infrastructure over manual setup.",
+  "Secure by default: scan pipelines, verify tokens, limit access.",
+  "Document clearly and communicate asynchronously.",
+];
+
+const stack = [
+  { name: "Terraform", icon: "simple-icons:terraform" },
+  { name: "AWS", icon: "simple-icons:amazonaws" },
+  { name: "Docker", icon: "simple-icons:docker" },
+  { name: "GitHub Actions", icon: "simple-icons:githubactions" },
+  { name: "Go", icon: "simple-icons:go" },
+  { name: "Python", icon: "simple-icons:python" },
+];
 ---
 
 <Layout title="About — RAHARINANDRASANA Willys Sadi Arnel">
   <Nav />
 
+  <!-- About me -->
   <section class="mb-14 sm:mb-20">
     <div class="mb-6 flex items-center gap-2.5">
       <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
-      <h1 class="section-title text-slate-950 dark:text-white">
-        About Me
-      </h1>
+      <h1 class="section-title text-slate-950 dark:text-white">About Me</h1>
     </div>
 
     <div class="max-w-2xl space-y-4 text-base leading-relaxed text-slate-700 text-pretty dark:text-slate-300 sm:text-lg">
-      <div class="relative pl-3 sm:pl-4 font-mono">
-        <span class="absolute left-0 top-0 select-none font-mono text-orange-500">›</span>
-        <p>
-          I'm a junior backend and cloud engineer based in Antananarivo, Madagascar,
-          currently expanding my expertise in software engineering at Haute École
-          d'Informatique (HEI).
-        </p>
-      </div>
-      <div class="relative pl-3 sm:pl-4 font-mono">
-        <span class="absolute left-0 top-0 select-none font-mono text-orange-500">›</span>
-        <p>
-          My focus centers on infrastructure automation, cloud-native tooling, and
-          building reliable backend services using technologies like Go, Terraform,
-          Docker, and Rust.
-        </p>
-      </div>
+      {intro.map((paragraph) => (
+        <div class="relative pl-3 font-mono sm:pl-4">
+          <span class="absolute left-0 top-0 select-none font-mono text-orange-500">›</span>
+          <p>{paragraph}</p>
+        </div>
+      ))}
     </div>
   </section>
 
-  <section class="mb-14 sm:mb-16">
+  <!-- What I do -->
+  <section class="mb-14 sm:mb-20">
     <div class="mb-6 flex items-center gap-2.5">
       <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
-      <h2 class="section-title text-slate-950 dark:text-white">
-        Background & Education
-      </h2>
+      <h2 class="section-title text-slate-950 dark:text-white">What I Do</h2>
+    </div>
+
+    <ul class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+      {services.map((item) => (
+        <li class="border-t border-slate-300 pt-4 dark:border-slate-700">
+          <h3 class="font-mono text-base font-semibold text-slate-950 dark:text-white sm:text-lg">
+            {item.title}
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400 sm:text-base">
+            {item.text}
+          </p>
+        </li>
+      ))}
+    </ul>
+
+    <p class="mt-6 font-mono text-sm text-slate-500 dark:text-slate-400">
+      Real examples in{" "}
+      <a href="/#projects" class="text-slate-900 underline decoration-orange-400 underline-offset-4 dark:text-white">
+        Featured Projects
+      </a>.
+    </p>
+  </section>
+
+  <!-- How I work -->
+  <section class="mb-14 sm:mb-20">
+    <div class="mb-6 flex items-center gap-2.5">
+      <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+      <h2 class="section-title text-slate-950 dark:text-white">How I Work</h2>
+    </div>
+
+    <ul class="max-w-2xl space-y-3 text-base leading-relaxed text-slate-700 dark:text-slate-300 sm:text-lg">
+      {principles.map((line) => (
+        <li class="flex items-start gap-3 font-mono sm:gap-2.5">
+          <span class="mt-px shrink-0 select-none text-orange-500">›</span>
+          <span class="min-w-0 break-words">{line}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Background -->
+  <section class="mb-14 sm:mb-20">
+    <div class="mb-6 flex items-center gap-2.5">
+      <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+      <h2 class="section-title text-slate-950 dark:text-white">Background</h2>
     </div>
 
     <dl class="space-y-3 font-mono">
-      <div class="relative pl-3 sm:pl-4 font-mono">
-        <InfoRow label="Current">
-          <span class="font-mono text-base font-semibold text-slate-900 dark:text-white sm:text-lg">
-            3rd-year Software Engineering Student at HEI Madagascar
-          </span>
-        </InfoRow>
-      </div>
-      <div class="relative pl-3 sm:pl-4 font-mono">
-        <InfoRow label="Previous">
-          <span class="font-mono text-base font-semibold text-slate-900 dark:text-white sm:text-lg">
-            Mathematics & Computer Science at University of Ankatso
-          </span>
-        </InfoRow>
-      </div>
-      <div class="relative pl-3 sm:pl-4 font-mono">
+      <div class="relative pl-3 font-mono sm:pl-4">
         <InfoRow label="Focus">
           <span class="font-mono text-base font-semibold text-slate-900 dark:text-white sm:text-lg">
-            Cloud Automation, Infrastructure as Code, CLI/TUI Tools
+            DevOps, Cloud Automation, Infrastructure as Code
+          </span>
+        </InfoRow>
+      </div>
+      <div class="relative pl-3 font-mono sm:pl-4">
+        <InfoRow label="Foundation">
+          <span class="font-mono text-base font-semibold text-slate-900 dark:text-white sm:text-lg">
+            Mathematics & Computer Science, University of Ankatso
+          </span>
+        </InfoRow>
+      </div>
+      <div class="relative pl-3 font-mono sm:pl-4">
+        <InfoRow label="Based in">
+          <span class="font-mono text-base font-semibold text-slate-900 dark:text-white sm:text-lg">
+            Antananarivo, Madagascar (UTC+3)
+          </span>
+        </InfoRow>
+      </div>
+      <div class="relative pl-3 font-mono sm:pl-4">
+        <InfoRow label="Work mode">
+          <span class="font-mono text-base font-semibold text-slate-900 dark:text-white sm:text-lg">
+            Remote, freelance
           </span>
         </InfoRow>
       </div>
     </dl>
+  </section>
+
+  <!-- Tools -->
+  <section class="mb-14 sm:mb-16">
+    <div class="mb-6 flex items-center gap-2.5">
+      <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+      <h2 class="section-title text-slate-950 dark:text-white">Tools I Use</h2>
+    </div>
+
+    <ul class="flex flex-wrap gap-x-6 gap-y-3 font-mono">
+      {stack.map((item) => (
+        <li class="flex items-center gap-2.5 text-slate-700 dark:text-slate-300 [&_svg]:h-5 [&_svg]:w-5 [&_svg]:shrink-0">
+          <Icon name={item.icon} />
+          <span class="text-sm font-semibold sm:text-base">{item.name}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Call to action -->
+  <section class="mb-8 sm:mb-12">
+    <div class="mb-4 flex items-center gap-2.5">
+      <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+      <h2 class="section-title text-slate-950 dark:text-white">Work With Me</h2>
+    </div>
+
+    <p class="max-w-2xl text-base leading-relaxed text-slate-700 dark:text-slate-300 sm:text-lg">
+      Open to remote freelance work in DevOps and cloud automation. Tell me about your
+      infrastructure or delivery challenge at{" "}
+      <a
+        href="mailto:hello@sadiarnel.me"
+        class="font-mono font-semibold text-slate-950 underline decoration-orange-400 underline-offset-4 dark:text-white"
+      >hello@sadiarnel.me</a>{" "}
+      or browse my code on{" "}
+      <a
+        href="https://github.com/Arnel-rah"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-mono font-semibold text-slate-950 underline decoration-orange-400 underline-offset-4 dark:text-white"
+      >GitHub</a>.
+    </p>
   </section>
 
   <Footer name="RAHARINANDRASANA Willys Sadi Arnel" sourceUrl="https://github.com/Arnel-rah" />
