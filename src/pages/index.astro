@@ -12,11 +12,12 @@ const projects = [
   {
     title: "Secure Deploy Kit",
     description:
-      "An infrastructure-as-code project provisioning cloud resources locally with Terraform and LocalStack, backed by a Go demo API secured with OIDC token verification.",
+      "Infrastructure as code that provisions cloud resources locally with Terraform and LocalStack, plus a Go demo API secured with OIDC token verification and a pipeline that scans for vulnerabilities.",
     tech: [
       { name: "Terraform", icon: "simple-icons:terraform" },
       { name: "LocalStack", icon: "lucide:layers" },
       { name: "Go", icon: "simple-icons:go" },
+      { name: "GitHub Actions", icon: "simple-icons:githubactions" },
     ],
     repo: "https://github.com/Arnel-rah",
     badge: "Featured",
@@ -24,7 +25,7 @@ const projects = [
   {
     title: "GhostPort",
     description:
-      "A remote port and process monitoring tool streaming real-time status data over gRPC, with a terminal UI.",
+      "A remote port and process monitor that streams real-time status over gRPC to a terminal UI, packaged to run in Docker.",
     tech: [
       { name: "Go", icon: "simple-icons:go" },
       { name: "gRPC", icon: "lucide:network" },
@@ -35,7 +36,7 @@ const projects = [
   {
     title: "Eco-Scale Daemon",
     description:
-      "A Go background daemon interacting with the Docker SDK to dynamically scale or stop containers based on energy policies.",
+      "A Go daemon built on the Docker SDK that scales or stops containers automatically based on energy policies.",
     tech: [
       { name: "Go", icon: "simple-icons:go" },
       { name: "Docker SDK", icon: "simple-icons:docker" },
@@ -45,10 +46,10 @@ const projects = [
 ];
 
 const achievements = [
-  { text: "Provision and secure cloud infrastructure as code using Terraform, LocalStack, and AWS." },
-  { text: "Automate containerized workloads and cloud deployment pipelines with Docker and GitHub Actions." },
-  { text: "Build cloud automation daemons, CLI tools, and backend microservices in Go." },
-  { text: "Based in Madagascar, building in public on GitHub.", href: "https://github.com/Arnel-rah" },
+  { text: "Provision and secure cloud infrastructure as code with Terraform, LocalStack, and AWS." },
+  { text: "Automate build, test, and deployment pipelines for containerized workloads with Docker and GitHub Actions." },
+  { text: "Build cloud automation daemons, CLI tools, and backend services in Go." },
+  { text: "Working remotely from Madagascar (UTC+3), building in public on GitHub.", href: "https://github.com/Arnel-rah" },
 ];
 
 const cloudStack = [
@@ -63,21 +64,21 @@ const cloudStack = [
     ],
   },
   {
-    category: "Containers",
+    category: "Containers & CI/CD",
     uiIcon: "lucide:container",
     items: [
       { name: "Docker", icon: "simple-icons:docker" },
       { name: "Compose", icon: "simple-icons:docker" },
       { name: "Docker SDK", icon: "simple-icons:docker" },
+      { name: "GitHub Actions", icon: "simple-icons:githubactions" },
     ],
   },
   {
-    category: "Languages & Ops",
+    category: "Languages & Scripting",
     uiIcon: "lucide:terminal",
     items: [
       { name: "Go", icon: "simple-icons:go" },
       { name: "Python", icon: "simple-icons:python" },
-      { name: "GitHub Actions", icon: "simple-icons:githubactions" },
       { name: "Bash / Zsh", icon: "simple-icons:gnubash" },
     ],
   },
@@ -90,14 +91,14 @@ const contacts = [
 ];
 ---
 
-<Layout title="RAHARINANDRASANA Willys Sadi Arnel — Cloud & Infrastructure Engineer">
+<Layout title="RAHARINANDRASANA Willys Sadi Arnel — DevOps & Cloud Engineer">
   <Nav />
 
   <Hero
     name="RAHARINANDRASANA Willys Sadi Arnel"
     initials="WA"
-    role="Cloud & Infrastructure Engineer"
-    intro="I design automated cloud infrastructure, declarative deployment pipelines, and cloud-native tools — specializing in Terraform, Go, Docker, and AWS workflows."
+    role="DevOps & Cloud Engineer"
+    intro="I help teams automate cloud infrastructure and delivery pipelines with Terraform, Docker, GitHub Actions, AWS, and Go. Based in Madagascar, available for remote freelance work."
   />
 
   <AchievementList items={achievements} />
@@ -107,7 +108,7 @@ const contacts = [
   <section id="projects" class="mb-12 sm:mb-20">
     <div class="mb-5 flex flex-col items-start gap-3 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
       <div class="flex items-center gap-2.5">
-        <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+        <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
         <h2 class="section-title text-slate-950 dark:text-white">
           Featured Projects
         </h2>
@@ -117,7 +118,7 @@ const contacts = [
           href="https://github.com/Arnel-rah"
           target="_blank"
           rel="noopener noreferrer"
-          class="font-mono text-sm text-slate-500 underline decoration-orange-400 underline-offset-4 transition-colors hover:text-orange-600 dark:text-slate-400 dark:hover:text-orange-400"
+          class="font-mono text-sm text-slate-500 underline decoration-orange-400 underline-offset-4 dark:text-slate-400"
         >
           View all on GitHub ↗
         </a>
@@ -128,12 +129,12 @@ const contacts = [
       {projects.map((p) => <ProjectItem {...p} />)}
     </div>
 
-    <div class="mt-4 sm:hidden">
+    <div class="mt-5 sm:hidden">
       <a
         href="https://github.com/Arnel-rah"
         target="_blank"
         rel="noopener noreferrer"
-        class="font-mono text-xs text-slate-500 underline decoration-orange-400 underline-offset-4 transition-colors hover:text-orange-600 dark:text-slate-400 dark:hover:text-orange-400"
+        class="font-mono text-sm text-slate-500 underline decoration-orange-400 underline-offset-4 dark:text-slate-400"
       >
         View all on GitHub ↗
       </a>
@@ -141,62 +142,71 @@ const contacts = [
   </section>
 
   <section id="stack" class="mb-12 sm:mb-20">
-  <div class="mb-5 flex items-center gap-2.5 sm:mb-8">
-    <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
-    <h2 class="section-title text-slate-950 dark:text-white">
-      Cloud Tech Stack
-    </h2>
-  </div>
+    <div class="mb-5 flex items-center gap-2.5 sm:mb-8">
+      <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
+      <h2 class="section-title text-slate-950 dark:text-white">
+        Cloud Tech Stack
+      </h2>
+    </div>
 
-  <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
-    {cloudStack.map((group) => (
-      <div class="flex flex-col gap-4">
-        <div class="flex items-center gap-2.5 border-b border-slate-300 pb-3 dark:border-slate-700">
-          <Icon name={group.uiIcon} class="h-4 w-4 text-slate-500 dark:text-slate-400" />
-          <h3 class="text-xs font-semibold uppercase tracking-[0.12em] text-slate-700 dark:text-slate-200 sm:text-sm">
-            {group.category}
-          </h3>
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
+      {cloudStack.map((group) => (
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-2.5 border-b border-slate-300 pb-3 dark:border-slate-700">
+            <Icon name={group.uiIcon} class="h-4 w-4 shrink-0 text-slate-500 dark:text-slate-400" />
+            <h3 class="text-sm font-semibold uppercase tracking-[0.12em] text-slate-700 dark:text-slate-200">
+              {group.category}
+            </h3>
+          </div>
+
+          <ul class="flex flex-col gap-3 font-mono">
+            {group.items.map((item) => (
+              <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 [&_svg]:h-5 [&_svg]:w-5 [&_svg]:shrink-0">
+                <Icon name={item.icon} />
+                <span class="text-base font-semibold">{item.name}</span>
+              </li>
+            ))}
+          </ul>
         </div>
+      ))}
+    </div>
+  </section>
 
-        <ul class="flex flex-col gap-3 font-mono">
-          {group.items.map((item) => (
-            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300 [&_svg]:h-5 [&_svg]:w-5 [&_svg]:shrink-0">
-              <Icon name={item.icon} />
-              <span class="text-sm font-semibold sm:text-base">{item.name}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </div>
-</section>
+  <section id="contact" class="mb-0 sm:mb-12">
+    <div class="mb-4 flex items-center gap-2.5">
+      <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
+      <h2 class="section-title text-slate-950 dark:text-white">
+        Get in touch
+      </h2>
+    </div>
 
-<section id="contact" class="mb-0 sm:mb-12">
-  <div class="mb-4 flex items-center gap-2.5">
-    <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
-    <h2 class="section-title text-slate-950 dark:text-white">
-      Get in touch
-    </h2>
-  </div>
+    <p class="mb-5 max-w-2xl text-base leading-7 text-slate-700 dark:text-slate-300 sm:text-lg sm:leading-relaxed">
+      Need help with cloud infrastructure, CI/CD, or automation? I'm open to remote freelance
+      projects. Write to me at{" "}
+      <a
+        href="mailto:hello@sadiarnel.me"
+        class="break-all font-mono font-semibold text-slate-950 underline decoration-orange-400 underline-offset-4 dark:text-white"
+      >hello@sadiarnel.me</a>.
+    </p>
 
-  <ul class="flex items-center gap-4 font-mono">
-    {contacts.map((item) => (
-      <li>
-        <a
-          href={item.href}
-          target={item.href.startsWith("http") ? "_blank" : undefined}
-          rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-          aria-label={item.label}
-          title={item.label}
-          class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 [&_svg]:h-5 [&_svg]:w-5"
-        >
-          <Icon name={item.icon} />
-          <span class="sr-only">{item.value}</span>
-        </a>
-      </li>
-    ))}
-  </ul>
-</section>
+    <ul class="flex items-center gap-4 font-mono">
+      {contacts.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            target={item.href.startsWith("http") ? "_blank" : undefined}
+            rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            aria-label={item.label}
+            title={item.label}
+            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 [&_svg]:h-5 [&_svg]:w-5"
+          >
+            <Icon name={item.icon} />
+            <span class="sr-only">{item.value}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
 
   <Footer name="RAHARINANDRASANA Willys Sadi Arnel" sourceUrl="https://github.com/Arnel-rah" />
 </Layout>
