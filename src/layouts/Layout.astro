@@ -2,25 +2,32 @@
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
 const {
   title,
-  description = "RAHARINANDRASANA Willys Sadi Arnel — Backend & Cloud Automation Engineer based in Madagascar.",
+  description = "RAHARINANDRASANA Willys Sadi Arnel — DevOps & Cloud Engineer based in Madagascar, available for remote freelance work.",
+  image,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.dev");
+const siteURL = Astro.site || "https://arnel.dev";
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const ogImage = image ? new URL(image, siteURL) : undefined;
+
+const fontsHref =
+  "https://fonts.googleapis.com/css2?family=Geist:wght@500..700&family=JetBrains+Mono:wght@400..600&family=Manrope:wght@400..700&display=swap";
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f5ef" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111827" />
     <title>{title}</title>
-    <meta name="title" content={title} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
@@ -28,12 +35,30 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={Astro.url} />
+    <meta name="twitter:card" content={ogImage ? "summary_large_image" : "summary"} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
 
+    <!-- Thème appliqué avant le premier affichage (évite le flash) -->
+    <script is:inline>
+      (function () {
+        var dark = false;
+        try {
+          var stored = localStorage.getItem("theme");
+          dark =
+            stored === "dark" ||
+            (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        } catch (e) {
+          dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        }
+        document.documentElement.classList.toggle("dark", dark);
+      })();
+    </script>
+
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -43,20 +68,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
       type="font/woff2"
       crossorigin
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <script is:inline>
-      const stored = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (stored === "dark" || (!stored && prefersDark)) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    </script>
+    <!-- Chargé sans bloquer l'affichage -->
+    <link rel="stylesheet" href={fontsHref} media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href={fontsHref} /></noscript>
   </head>
 
   <body
@@ -91,6 +105,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
     text-size-adjust: 100%;
   }
 
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
   body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -120,15 +140,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://arnel.de
 
   .section-title {
     font-family: "Geist Pixel Grid", "JetBrains Mono", monospace;
-    font-size: clamp(1.375rem, 6vw, 1.875rem);
+    font-size: clamp(1.625rem, 7vw, 1.875rem);
     font-weight: 400;
     letter-spacing: -0.025em;
-    line-height: 1;
+    line-height: 1.1;
   }
 
   .nav-name {
     font-family: "Geist Pixel Grid", "JetBrains Mono", monospace;
-    font-size: clamp(1rem, 4vw, 1.25rem);
+    font-size: clamp(1.0625rem, 4.5vw, 1.25rem);
     font-weight: 400;
     letter-spacing: -0.025em;
     line-height: 1;
