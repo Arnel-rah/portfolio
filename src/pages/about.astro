@@ -6,42 +6,43 @@ import InfoRow from "../components/InfoRow.astro";
 import { Icon } from "astro-icon/components";
 
 const intro = [
-  "I'm a DevOps and cloud engineer based in Antananarivo, Madagascar, working with international teams and clients remotely as a freelancer.",
-  "I help teams automate infrastructure, ship through reliable CI/CD pipelines, and run containerized workloads, using Terraform, Docker, GitHub Actions, AWS, and Go.",
-  "I replace manual, error-prone operations with declarative, versioned, repeatable workflows, and I build in public on GitHub so my work can be reviewed.",
+  "I'm a junior SysOps engineer based in Antananarivo, Madagascar, with a focus on Linux administration and operational automation.",
+  "I work with containers, shell scripts, infrastructure-as-code, CI/CD pipelines, system monitoring, and application delivery. My goal is to make environments reproducible, documented, and easier to operate.",
+  "I replace repetitive manual work with small, reliable tools and versioned procedures. I also use GitHub to build in public and keep my operational work reviewable.",
 ];
 
 const services = [
   {
-    title: "Infrastructure as Code",
-    text: "Cloud resources defined in Terraform, tested locally with LocalStack, and deployed to AWS or DigitalOcean in a repeatable way.",
+    title: "Linux & systems",
+    text: "Linux environment setup, package management, users and permissions, services, logs, networking checks, and repeatable shell automation.",
   },
   {
-    title: "CI/CD pipelines",
-    text: "GitHub Actions workflows covering build, test, security scanning, and deployment, so every change ships the same way.",
+    title: "Containers & delivery",
+    text: "Dockerized workloads, Compose environments, container lifecycle automation, and GitHub Actions pipelines for build, test, and deployment.",
   },
   {
-    title: "Containers & automation",
-    text: "Dockerized workloads and Compose setups, plus Go tooling that works directly with the Docker SDK to scale or stop containers.",
+    title: "Automation & IaC",
+    text: "Terraform and scripts to reduce manual configuration, provision consistent environments, and document infrastructure changes.",
   },
   {
-    title: "Backend & internal tools",
-    text: "Go services, CLIs, and monitoring tools, including APIs secured with OIDC token verification and gRPC-based status streaming.",
+    title: "Monitoring & operations",
+    text: "Go and Python operational tools, process and port checks, health endpoints, logs, backup procedures, and incident-oriented runbooks.",
   },
 ];
 
 const principles = [
-  "Automate anything that has to be done more than twice.",
-  "Prefer declarative, versioned infrastructure over manual setup.",
-  "Secure by default: scan pipelines, verify tokens, limit access.",
-  "Document clearly and communicate asynchronously.",
+  "Make systems observable before adding complexity.",
+  "Automate tasks that are repetitive, risky, or difficult to reproduce.",
+  "Prefer least-privilege access, secure configuration, and documented recovery steps.",
+  "Treat backups, logs, health checks, and rollback as first-class requirements.",
 ];
 
 const stack = [
+  { name: "Linux", icon: "lucide:terminal" },
   { name: "Terraform", icon: "simple-icons:terraform" },
-  { name: "AWS", icon: "simple-icons:amazonaws" },
   { name: "Docker", icon: "simple-icons:docker" },
   { name: "GitHub Actions", icon: "simple-icons:githubactions" },
+  { name: "Bash", icon: "simple-icons:gnubash" },
   { name: "Go", icon: "simple-icons:go" },
   { name: "Python", icon: "simple-icons:python" },
 ];
@@ -123,7 +124,7 @@ const stack = [
       <div class="relative pl-3 font-mono sm:pl-4">
         <InfoRow label="Focus">
           <span class="break-words font-mono text-base font-semibold leading-7 text-slate-900 dark:text-white sm:text-lg">
-            DevOps, Cloud Automation, Infrastructure as Code
+            SysOps, Infrastructure Automation, Infrastructure as Code
           </span>
         </InfoRow>
       </div>
@@ -144,7 +145,7 @@ const stack = [
       <div class="relative pl-3 font-mono sm:pl-4">
         <InfoRow label="Work mode">
           <span class="break-words font-mono text-base font-semibold leading-7 text-slate-900 dark:text-white sm:text-lg">
-            Remote, freelance
+            Portfolio and personal projects
           </span>
         </InfoRow>
       </div>
@@ -168,16 +169,15 @@ const stack = [
     </ul>
   </section>
 
-  <!-- Call to action -->
+  <!-- Contact -->
   <section class="mb-8 sm:mb-12">
     <div class="mb-4 flex items-center gap-2.5">
       <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
-      <h2 class="section-title text-slate-950 dark:text-white">Work With Me</h2>
+      <h2 class="section-title text-slate-950 dark:text-white">Contact</h2>
     </div>
 
     <p class="max-w-2xl text-base leading-7 text-slate-700 dark:text-slate-300 sm:text-lg sm:leading-relaxed">
-      Open to remote freelance work in DevOps and cloud automation. Tell me about your
-      infrastructure or delivery challenge at{" "}
+      For professional exchanges or technical discussions, write to{" "}
       <a
         href="mailto:hello@sadiarnel.me"
         class="break-all font-mono font-semibold text-slate-950 underline decoration-orange-400 underline-offset-4 dark:text-white"
