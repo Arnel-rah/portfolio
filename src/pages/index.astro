@@ -10,9 +10,9 @@ import { Icon } from "astro-icon/components";
 
 const projects = [
   {
-    title: "Secure Deploy Kit",
+    title: "Automated Deploy Lab",
     description:
-      "Infrastructure as code that provisions cloud resources locally with Terraform and LocalStack, plus a Go demo API secured with OIDC token verification and a pipeline that scans for vulnerabilities.",
+      "A reproducible system-delivery environment using Terraform and LocalStack, with containerized services, automated configuration, and pipeline security checks.",
     tech: [
       { name: "Terraform", icon: "simple-icons:terraform" },
       { name: "LocalStack", icon: "lucide:layers" },
@@ -23,9 +23,9 @@ const projects = [
     badge: "Featured",
   },
   {
-    title: "GhostPort",
+    title: "System Port Monitor",
     description:
-      "A remote port and process monitor that streams real-time status over gRPC to a terminal UI, packaged to run in Docker.",
+      "A Go monitoring utility that reports listening ports and running processes, streams status over gRPC, and exposes a readable terminal interface.",
     tech: [
       { name: "Go", icon: "simple-icons:go" },
       { name: "gRPC", icon: "lucide:network" },
@@ -36,7 +36,7 @@ const projects = [
   {
     title: "Eco-Scale Daemon",
     description:
-      "A Go daemon built on the Docker SDK that scales or stops containers automatically based on energy policies.",
+      "A resource-aware Go service built with the Docker SDK to monitor container state and apply automated start or stop policies.",
     tech: [
       { name: "Go", icon: "simple-icons:go" },
       { name: "Docker SDK", icon: "simple-icons:docker" },
@@ -46,40 +46,39 @@ const projects = [
 ];
 
 const achievements = [
-  { text: "Provision and secure cloud infrastructure as code with Terraform, LocalStack, and AWS." },
-  { text: "Automate build, test, and deployment pipelines for containerized workloads with Docker and GitHub Actions." },
-  { text: "Build cloud automation daemons, CLI tools, and backend services in Go." },
-  { text: "Working remotely from Madagascar (UTC+3), building in public on GitHub.", href: "https://github.com/Arnel-rah" },
+  { text: "Automate Linux system setup and repeatable infrastructure with Terraform, Bash, Docker, and declarative configuration." },
+  { text: "Maintain build, test, security, and deployment pipelines for containerized applications with GitHub Actions." },
+  { text: "Develop operational tools in Go and Python for monitoring, process management, logs, and routine administration." },
+  { text: "Based in Madagascar (UTC+3), sharing operational projects and technical learning on GitHub.", href: "https://github.com/Arnel-rah" },
 ];
 
-const cloudStack = [
+const sysopsStack = [
   {
-    category: "Cloud & IaC",
-    uiIcon: "lucide:cloud",
+    category: "Systems & IaC",
+    uiIcon: "lucide:terminal",
     items: [
+      { name: "Linux", icon: "lucide:terminal" },
       { name: "Terraform", icon: "simple-icons:terraform" },
-      { name: "AWS", icon: "simple-icons:amazonaws" },
-      { name: "LocalStack", icon: "lucide:layers" },
-      { name: "DigitalOcean", icon: "simple-icons:digitalocean" },
+      { name: "Bash", icon: "simple-icons:gnubash" },
     ],
   },
   {
-    category: "Containers & CI/CD",
+    category: "Operations & Delivery",
     uiIcon: "lucide:container",
     items: [
       { name: "Docker", icon: "simple-icons:docker" },
       { name: "Compose", icon: "simple-icons:docker" },
-      { name: "Docker SDK", icon: "simple-icons:docker" },
       { name: "GitHub Actions", icon: "simple-icons:githubactions" },
+      { name: "Docker SDK", icon: "simple-icons:docker" },
     ],
   },
   {
-    category: "Languages & Scripting",
+    category: "Languages & Data",
     uiIcon: "lucide:terminal",
     items: [
       { name: "Go", icon: "simple-icons:go" },
       { name: "Python", icon: "simple-icons:python" },
-      { name: "Bash / Zsh", icon: "simple-icons:gnubash" },
+      { name: "Networking", icon: "lucide:network" },
     ],
   },
 ];
@@ -91,14 +90,14 @@ const contacts = [
 ];
 ---
 
-<Layout title="RAHARINANDRASANA Willys Sadi Arnel — DevOps & Cloud Engineer">
+<Layout title="RAHARINANDRASANA Willys Sadi Arnel — SysOps Engineer">
   <Nav />
 
   <Hero
     name="RAHARINANDRASANA Willys Sadi Arnel"
     initials="WA"
-    role="DevOps & Cloud Engineer"
-    intro="I help teams automate cloud infrastructure and delivery pipelines with Terraform, Docker, GitHub Actions, AWS, and Go. Based in Madagascar, available for remote freelance work."
+    role="SysOps Engineer"
+    intro="I maintain Linux systems and automate routine operations with Docker, Bash, Terraform, CI/CD, and monitoring tools. My focus is to reduce manual work, improve deployment reliability, and keep services observable. Based in Madagascar."
   />
 
   <AchievementList items={achievements} />
@@ -145,12 +144,12 @@ const contacts = [
     <div class="mb-5 flex items-center gap-2.5 sm:mb-8">
       <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
       <h2 class="section-title text-slate-950 dark:text-white">
-        Cloud Tech Stack
+        SysOps Tech Stack
       </h2>
     </div>
 
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
-      {cloudStack.map((group) => (
+      {sysopsStack.map((group) => (
         <div class="flex flex-col gap-4">
           <div class="flex items-center gap-2.5 border-b border-slate-300 pb-3 dark:border-slate-700">
             <Icon name={group.uiIcon} class="h-4 w-4 shrink-0 text-slate-500 dark:text-slate-400" />
@@ -181,8 +180,7 @@ const contacts = [
     </div>
 
     <p class="mb-5 max-w-2xl text-base leading-7 text-slate-700 dark:text-slate-300 sm:text-lg sm:leading-relaxed">
-      Need help with cloud infrastructure, CI/CD, or automation? I'm open to remote freelance
-      projects. Write to me at{" "}
+      You can reach me at{" "}
       <a
         href="mailto:hello@sadiarnel.me"
         class="break-all font-mono font-semibold text-slate-950 underline decoration-orange-400 underline-offset-4 dark:text-white"
