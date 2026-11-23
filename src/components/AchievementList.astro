@@ -13,7 +13,7 @@ const { items } = Astro.props;
 
 <section id="about" class="mb-12 sm:mb-20">
   <div class="mb-4 flex items-center gap-2.5">
-    <span class="inline-block h-3 w-3 rounded-full bg-orange-500"></span>
+    <span class="inline-block h-3 w-3 rounded-full bg-[#557c64]"></span>
     <h2 class="section-title text-slate-950 dark:text-white">
       Things I've done
     </h2>
@@ -22,14 +22,14 @@ const { items } = Astro.props;
   <ul class="space-y-3 text-base leading-relaxed text-slate-700 dark:text-slate-300 sm:text-lg">
     {items.map((item) => (
       <li class="flex items-start gap-2.5">
-        <span class="mt-0.5 shrink-0 select-none text-orange-500">•</span>
+        <span class="mt-0.5 shrink-0 select-none text-[#b56f4a]">•</span>
         <span>
           {item.href ? (
             <a
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              class="font-mono text-slate-900 underline decoration-orange-400 underline-offset-4 transition-colors hover:text-orange-600 dark:text-white dark:hover:text-orange-400"
+              class="font-mono text-[#24302a] underline decoration-[#b56f4a] underline-offset-4 transition-colors hover:text-[#557c64] dark:text-[#edf1e8] dark:hover:text-[#9bb5a1]"
             >
               {item.text}
             </a>
