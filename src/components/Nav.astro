@@ -4,28 +4,28 @@ import { Sun, Moon } from "@lucide/astro";
 const isAboutPage = Astro.url.pathname === "/about";
 ---
 
-<header class="sticky top-0 z-10 -mx-4 mb-12 bg-[#f7f5ef] px-4 pt-3 sm:-mx-8 sm:mb-20 sm:px-8 sm:pt-6 dark:bg-[#111827]">
-  <nav class="flex items-center justify-between gap-6 border-b border-slate-300 pb-4 dark:border-slate-700">
+<header class="sticky top-0 z-10 -mx-4 mb-12 bg-[#f4f1e7] px-4 pt-3 sm:-mx-8 sm:mb-20 sm:px-8 sm:pt-6 dark:bg-[#17211c]">
+  <nav class="flex items-center justify-between gap-6 border-b border-[#aeb9ae] pb-4 dark:border-[#405348]">
     <div class="flex min-w-0 items-center gap-3">
       <a
         href="/"
         aria-label="Arnel home"
         class="group shrink-0 font-mono tracking-[0.18em] uppercase transition-colors"
       >
-        <span class="nav-name text-slate-900 transition-colors group-hover:text-orange-600 dark:text-white dark:group-hover:text-orange-400">arnel</span>
+        <span class="nav-name text-[#24302a] transition-colors group-hover:text-[#557c64] dark:text-[#edf1e8] dark:group-hover:text-[#9bb5a1]">arnel</span>
       </a>
-      <span aria-hidden="true" class="font-mono text-orange-500">/</span>
+      <span aria-hidden="true" class="font-mono text-[#b56f4a]">/</span>
       <span class="hidden font-mono text-xs uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400 sm:inline">sysops engineer</span>
     </div>
 
     <div class="flex items-center gap-3">
       <div class="flex items-center gap-3 font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 sm:gap-5">
-        <a href="/#projects" class="hidden transition-colors hover:text-orange-600 dark:hover:text-orange-400 sm:inline">work</a>
+        <a href="/#projects" class="hidden transition-colors hover:text-[#557c64] dark:hover:text-[#9bb5a1] sm:inline">work</a>
         <a
           href="/about"
           aria-current={isAboutPage ? "page" : undefined}
-          class:list={[{ "text-orange-600 dark:text-orange-400": isAboutPage }]}
-          class="transition-colors hover:text-orange-600 dark:hover:text-orange-400"
+          class:list={[{ "text-[#557c64] dark:text-[#9bb5a1]": isAboutPage }]}
+          class="transition-colors hover:text-[#557c64] dark:hover:text-[#9bb5a1]"
         >
           about
         </a>
@@ -34,7 +34,7 @@ const isAboutPage = Astro.url.pathname === "/about";
         id="theme-toggle"
         type="button"
         aria-label="Toggle theme"
-        class="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition-colors hover:border-orange-500 hover:text-orange-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f7f5ef] dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-orange-400 dark:hover:text-orange-400 dark:focus-visible:ring-offset-[#111827]"
+        class="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[#aeb9ae] bg-[#faf8f1] text-[#46554c] transition-colors hover:border-[#557c64] hover:text-[#557c64] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#557c64] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f1e7] dark:border-[#405348] dark:bg-[#202f27] dark:text-[#edf1e8] dark:hover:border-[#91aa96] dark:hover:text-[#91aa96] dark:focus-visible:ring-offset-[#17211c]"
       >
         <Sun size={16} class="block dark:hidden" />
         <Moon size={16} class="hidden dark:block" />

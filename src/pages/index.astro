@@ -107,7 +107,7 @@ const contacts = [
   <section id="projects" class="mb-12 sm:mb-20">
     <div class="mb-5 flex flex-col items-start gap-3 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
       <div class="flex items-center gap-2.5">
-        <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
+        <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-[#557c64]"></span>
         <h2 class="section-title text-slate-950 dark:text-white">
           Featured Projects
         </h2>
@@ -117,7 +117,7 @@ const contacts = [
           href="https://github.com/Arnel-rah"
           target="_blank"
           rel="noopener noreferrer"
-          class="font-mono text-sm text-slate-500 underline decoration-orange-400 underline-offset-4 dark:text-slate-400"
+          class="font-mono text-sm text-[#667268] underline decoration-[#b56f4a] underline-offset-4 transition-colors hover:text-[#557c64] dark:text-[#aab5ad] dark:hover:text-[#9bb5a1]"
         >
           View all on GitHub ↗
         </a>
@@ -125,7 +125,7 @@ const contacts = [
     </div>
 
     <div class="flex flex-col gap-4 sm:gap-5">
-      {projects.map((p) => <ProjectItem {...p} />)}
+      {projects.map((p, index) => <ProjectItem {...p} index={index + 1} />)}
     </div>
 
     <div class="mt-5 sm:hidden">
@@ -133,7 +133,7 @@ const contacts = [
         href="https://github.com/Arnel-rah"
         target="_blank"
         rel="noopener noreferrer"
-        class="font-mono text-sm text-slate-500 underline decoration-orange-400 underline-offset-4 dark:text-slate-400"
+        class="font-mono text-sm text-[#667268] underline decoration-[#b56f4a] underline-offset-4 transition-colors hover:text-[#557c64] dark:text-[#aab5ad]"
       >
         View all on GitHub ↗
       </a>
@@ -142,7 +142,7 @@ const contacts = [
 
   <section id="stack" class="mb-12 sm:mb-20">
     <div class="mb-5 flex items-center gap-2.5 sm:mb-8">
-      <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
+      <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-[#557c64]"></span>
       <h2 class="section-title text-slate-950 dark:text-white">
         SysOps Tech Stack
       </h2>
@@ -151,7 +151,7 @@ const contacts = [
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
       {sysopsStack.map((group) => (
         <div class="flex flex-col gap-4">
-          <div class="flex items-center gap-2.5 border-b border-slate-300 pb-3 dark:border-slate-700">
+          <div class="flex items-center gap-2.5 border-b border-[#aeb9ae] pb-3 dark:border-[#405348]">
             <Icon name={group.uiIcon} class="h-4 w-4 shrink-0 text-slate-500 dark:text-slate-400" />
             <h3 class="text-sm font-semibold uppercase tracking-[0.12em] text-slate-700 dark:text-slate-200">
               {group.category}
@@ -173,7 +173,7 @@ const contacts = [
 
   <section id="contact" class="mb-0 sm:mb-12">
     <div class="mb-4 flex items-center gap-2.5">
-      <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-orange-500"></span>
+      <span class="inline-block h-3 w-3 shrink-0 rounded-full bg-[#557c64]"></span>
       <h2 class="section-title text-slate-950 dark:text-white">
         Get in touch
       </h2>
@@ -183,7 +183,7 @@ const contacts = [
       You can reach me at{" "}
       <a
         href="mailto:hello@sadiarnel.me"
-        class="break-all font-mono font-semibold text-slate-950 underline decoration-orange-400 underline-offset-4 dark:text-white"
+        class="break-all font-mono font-semibold text-[#24302a] underline decoration-[#b56f4a] underline-offset-4 dark:text-[#edf1e8]"
       >hello@sadiarnel.me</a>.
     </p>
 
@@ -196,7 +196,7 @@ const contacts = [
             rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
             aria-label={item.label}
             title={item.label}
-            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 [&_svg]:h-5 [&_svg]:w-5"
+            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#aeb9ae] bg-[#faf8f1] text-[#46554c] transition-colors hover:border-[#557c64] hover:bg-[#557c64] hover:text-white dark:border-[#405348] dark:bg-[#202f27] dark:text-[#c8d1ca] [&_svg]:h-5 [&_svg]:w-5"
           >
             <Icon name={item.icon} />
             <span class="sr-only">{item.value}</span>
